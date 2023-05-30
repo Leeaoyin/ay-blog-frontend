@@ -1,0 +1,30 @@
+.card-with-icon-hover {
+    margin-left: 12px;
+}
+
+.card-custom-hover-style {
+    margin-left: 12px;
+    transition-property: all;
+  }
+  
+  .card-custom-hover-style:hover {
+    transform: translateY(-4px);
+    transition: all 0.1s;
+    
+  }
+
+  .card-with-icon-hover .icon-hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: all 0.1s;
+  }
+  
+  .card-with-icon-hover .icon-hover:hover {
+    background-color: rgb(var(--gray-2));
+  }
+
+  

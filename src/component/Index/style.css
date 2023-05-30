@@ -1,0 +1,58 @@
+.layout-basic-demo .arco-layout-header,
+.layout-basic-demo .arco-layout-footer,
+.layout-basic-demo .arco-layout-sider,
+.layout-basic-demo .arco-layout-sider-children {
+  /* color: var(--color-white); */
+  background-color: var(--color-neutral-2);
+  text-align: center;
+  min-width: 800px;
+  font-stretch: condensed;
+  display: flex;
+  justify-content: center;
+}
+
+.layout-basic-demo .arco-layout-content {
+  /* color: var(--color-white); */
+  background-color: var(--color-neutral-2);
+  font-stretch: condensed;
+  min-width: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+.arco-layout-content {
+  /* background-color: white !important; */
+    min-height: 90vh;
+}
+
+
+
+
+.layout-basic-demo .arco-layout-footer {
+  height:40px;
+  line-height: 40px;
+  background-color: rgb(var(--arcoblue-1));
+}
+
+
+
+
+.menu-demo {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-neutral-2);
+  }
+  .layout-basic-demo .arco-layout-header{
+    border-radius: 10px;
+    background-color: var(--color-neutral-2);
+  }
+  
+  .menu-demo .arco-menu-inner {
+    overflow-y: auto;
+    padding: auto 10px;
+  }

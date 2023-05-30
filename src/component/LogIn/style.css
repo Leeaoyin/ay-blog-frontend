@@ -1,0 +1,89 @@
+
+.layout-basic-login .arco-layout-footer,
+.layout-basic-login .arco-layout-sider,
+.layout-basic-login .arco-layout-sider-children {
+  /* color: var(--color-white); */
+  background-color: var(--color-neutral-2);
+  text-align: center;
+  font-stretch: condensed;
+  display: flex;
+  justify-content: center;
+}
+
+.layout-basic-login .arco-layout-content {
+  /* color: var(--color-white); */
+  /* background-color: var(--color-neutral-2); */
+  font-stretch: condensed;
+  display: flex;
+  justify-content: center;
+}
+/* https://static.zhihu.com/heifetz/assets/sign_bg.47eec442.png */
+
+.layout-basic-login {
+    margin: auto 250px;
+    background-image: url(https://static.zhihu.com/heifetz/assets/sign_bg.47eec442.png);  
+    background-color: var(--color-neutral-2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0;
+
+    
+}
+
+
+element.style {
+}
+.index-module__login--isG0A .index-module__layoutSpin--pr7cP .index-module__cardHasTab--Uzr9R {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 48px 43px 32px;
+}
+.index-module__loginCard--w1Ov0 {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+    box-sizing: border-box;
+    min-height: 100px;
+    padding: 48px 48px 32px;
+    position: relative;
+    width: 476px;
+}
+
+.arco-tabs-header-title{
+  font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.arco-tabs-header {
+  display: inline-block;
+  position: relative;
+  transition: transform .2s cubic-bezier(.34,.69,.1,1);
+  white-space: nowrap;
+}
+
+.arco-tabs-header-nav-line .arco-tabs-header-title-text {
+  display: inline-block;
+  padding: 1px 0;
+  position: relative;
+}
+
+
+
+
+
+
+
+.arco-layout-content {
+  /* background-color: white !important; */
+    min-height: 100vh;
+}
+
+
+
+
+
+
+
+
