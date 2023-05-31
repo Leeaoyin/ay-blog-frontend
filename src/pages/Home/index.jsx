@@ -46,7 +46,7 @@ export default function Home() {
     
   return (
     <div>
-      <Space wrap size={'large'} align='center' style={{paddingLeft: '1vh'}}>
+      <Space wrap size={'large'} align='center'>
       
       {
         site_info.map((item)=> {
