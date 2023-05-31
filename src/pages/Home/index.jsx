@@ -46,7 +46,7 @@ export default function Home() {
     
   return (
     <div>
-      <Space wrap size={'large'} align='center'>
+      <Space wrap size={'large'} align='center' style={{paddingLeft: '1vh'}}>
       
       {
         site_info.map((item)=> {
@@ -55,7 +55,7 @@ export default function Home() {
               key={item.id}
               className='card-custom-hover-style'
               hoverable
-              style={{ width: 300,borderRadius: '10px' }}
+              style={{ width: 300,borderRadius: '10px'}}
               onClick={()=>openUrl(item.url)}
           >
             <Space

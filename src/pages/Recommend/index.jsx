@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Input, Message, Empty, List, Avatar, Space } from '@arco-design/web-react'
-import { IconHeart, IconMessage, IconStar } from '@arco-design/web-react/icon';
+// import { IconHeart, IconMessage, IconStar } from '@arco-design/web-react/icon';
 
 import './style.css';
 

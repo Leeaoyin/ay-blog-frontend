@@ -1,8 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-import { Layout, Card, Link, Space, Tabs} from '@arco-design/web-react';
+import { Layout,
+         Card, 
+         Link, 
+         Space, 
+         Tabs,
+         Message,
+         Form,
+         Input,
+         Button
+        } from '@arco-design/web-react';
+
+import { useNavigate  } from 'react-router-dom';
 // import { IconWechat } from '@arco-design/web-react/icon';
-import { Form, Input, Button } from '@arco-design/web-react';
+
 
 
 import './style.css';
@@ -12,12 +23,26 @@ const Content = Layout.Content;
 
 
 export default function LogIn() {
+  const [loginLoding,setLoginLoding] = useState(false);
+  const navigate=useNavigate()
+
+  const checkLogin = ()=>{
+    setLoginLoding(!loginLoding);
+    setTimeout(()=>{
+      Message.success('登陆成功');
+      setLoginLoding(!loginLoding);
+      navigate(-1);
+      
+    },1000);
+
+  }
+
   return (
     <div className='layout-basic-login' style={{minWidth: '800px'}}>
       <Layout style={{ height: '100vh' }}>
         <Content>
         <Tabs className='index-module__loginCard--w1Ov0' defaultActiveTab='1' style={{ width: 500, margin:' auto' }}>
-          <TabPane key='1' title='登录' >
+          <TabPane key='1' title='账号' >
             <Space
                 
                 size='large'
@@ -33,8 +58,8 @@ export default function LogIn() {
                           </FormItem>
                           <FormItem wrapperCol={{ offset: 8 }}>
                             <Space size={40}>
-                            <Button type='primary'>登录</Button>
-                            <Button type='text'>注册</Button>
+                            <Button type='primary' onClick={checkLogin} loading={loginLoding}>登录</Button>
+                            <Button type='text' onClick={()=>{Message.info('注册功能完善中~')}}>注册</Button>
                             </Space>
                           </FormItem>  
                           <FormItem wrapperCol={{ offset: 7 }}>
@@ -47,7 +72,6 @@ export default function LogIn() {
       </TabPane>
       <TabPane key='2' title='邮箱'>
           <Space
-              
               size='large'
             >
                 <Space size='large'>
@@ -60,7 +84,7 @@ export default function LogIn() {
                             <Input placeholder='验证码' allowClear addAfter={<Button type='text'>发送</Button>}/>
                           </FormItem>
                           <FormItem wrapperCol={{ offset: 2 }}>
-                            <Button type='primary' htmlType='submit' long>登录/注册</Button>
+                            <Button type='primary' htmlType='submit' long onClick={()=>{Message.info('邮箱功能完善中~')}}>登录/注册</Button>
                         
                           </FormItem>  
                           <FormItem wrapperCol={{ offset: 7 }}>
