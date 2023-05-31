@@ -17,11 +17,11 @@
   display: flex;
   justify-content: center;
 }
-/* https://static.zhihu.com/heifetz/assets/sign_bg.47eec442.png */
+/* https://assets.codehub.cn/micro-frontend/login/f7eeecbeccefe963298c23b54741d473.png */
 
 .layout-basic-login {
     margin: auto 250px;
-    background-image: url(https://static.zhihu.com/heifetz/assets/sign_bg.47eec442.png);  
+    background-image: url(https://assets.codehub.cn/micro-frontend/login/f7eeecbeccefe963298c23b54741d473.png);  
     background-color: var(--color-neutral-2);
     background-repeat: no-repeat;
     background-size: cover;
