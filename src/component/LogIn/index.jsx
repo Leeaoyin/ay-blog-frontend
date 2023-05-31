@@ -41,12 +41,9 @@ export default function LogIn() {
     <div className='layout-basic-login' style={{minWidth: '800px'}}>
       <Layout style={{ height: '100vh' }}>
         <Content>
-        <Tabs className='index-module__loginCard--w1Ov0' defaultActiveTab='1' style={{ width: 500, margin:' auto' }}>
+        <Tabs className='index-module__loginCard--w1Ov0' defaultActiveTab='1' style={{ width: 500, margin:'auto' }}>
           <TabPane key='1' title='账号' >
-            <Space
-                
-                size='large'
-            >
+            <Space size='large'>
                 <Space size='large'>
                     <Form style={{ width: 350,margin: '0 auto'}} autoComplete='off'>
                         <Space direction='vertical'>

@@ -83,7 +83,7 @@ export default function Index() {
       <Layout style={{ height: '400px' }}>
           <Affix>
           <div className='head-root'>
-          <Header style={{padding: 'auto 100px'}}>
+          <Header style={{padding: 'auto 100px',marginTop:'10px'}}>
             
             <div className='menu-demo'>
               <Menu mode='horizontal'  defaultSelectedKeys={['1']} width={50} theme='dark' style={{borderRadius: '10px'}}>
@@ -125,7 +125,7 @@ export default function Index() {
           <Content style={{paddingTop: '20px'}}>
               <Outlet />
           </Content>
-          <Divider/>
+
           <Footer>
             <Foot/>
           </Footer>
