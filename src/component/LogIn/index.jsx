@@ -31,7 +31,7 @@ export default function LogIn() {
     setTimeout(()=>{
       Message.success('登陆成功');
       setLoginLoding(!loginLoding);
-      navigate(-1);
+      navigate('/index/home');
       
     },1000);
 

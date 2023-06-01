@@ -3,6 +3,9 @@ import { Space, Card, Avatar, Typography, Modal, Form, Input, Message } from '@a
 import { IconArrowRight,IconPlus,IconAt } from '@arco-design/web-react/icon';
 import { site_info } from '../../static/fake';
 import './style.css'
+import Banner from '../../component/Banner';
+
+
 
 const FormItem = Form.Item;
 
@@ -47,6 +50,7 @@ export default function Home() {
   return (
     <div>
       <Space wrap size={'large'} align='center'>
+        <Banner/>
       
       {
         site_info.map((item)=> {
