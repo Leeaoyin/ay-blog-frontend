@@ -31,7 +31,7 @@ export default function Recommend() {
                 <InputSearch
                     allowClear={true}
                     placeholder='请输入搜索内容'
-                    style={{ minWidth: '700px',width: '700px', marginBottom: '10px' }}
+                    style={{ minWidth: '700px',width: '700px', marginBottom: '10px',color: 'white' }}
                     // height= {}
                     searchButton={true}
                     onSearch={doSearch}
@@ -43,15 +43,27 @@ export default function Recommend() {
                     recommend_info.length!= 0 ? 
                     recommend_info.map((recommends)=>{
                         return (
-                            <RecomContent key={recommends.id} title={recommends.article_info.title} time={recommends.article_info.time} id={recommends.article_info.id} tags={recommends.article_info.tags}/>
+                            <RecomContent
+                                key={recommends.id} 
+                                title={recommends.article_info.title} 
+                                time={recommends.article_info.time} 
+                                id={recommends.article_info.id} 
+                                tags={recommends.article_info.tags}
+                                content={recommends.article_info.content}
+                                author={recommends.author.name}
+                            />
                         )
-                    }) :
+                    }) 
+
+                    
+                    :
+
                         (
                             <Empty
-                            style={{marginTop: '100px'}}
-                            imgSrc={require('../../static/pageImg/no_recommend.png')}
-                            description={<span>暂时无内容哦~~</span>}
-                        />
+                                    style={{marginTop: '100px'}}
+                                    imgSrc={require('../../static/pageImg/no_recommend.png')}
+                                    description={<span>暂时无内容哦~~</span>}
+                            />
                         )
                     
                 }
