@@ -31,3 +31,47 @@ export const site_info = [
     }
     
 ]
+
+export const recommend_info = [
+        {
+            id: '001',
+            auther_info:{
+                name: 'test'
+                
+            },
+            article_info:{
+                id: '49a7v896515',
+                title: '快速入门',
+                tags: ['后端','java'],
+                time: '2023-5-6 11:23:57'
+            }
+        },
+        {
+            id: '002',
+            auther_info:{
+                name: 'lee'
+                
+            },
+            article_info:{
+                id: '49874896515',
+                title: '后端速成',
+                tags: ['后端','java'],
+                time: '2023-5-6 11:23:57'
+            }
+        },
+        {
+            id: '003',
+            auther_info:{
+                name: 'test'
+                
+            },
+            article_info:{
+                id: '89789345463',
+                title: 'git操作',
+                tags: ['后端','java'],
+                time: '2023-5-6 11:23:57'
+            }
+        }
+
+    ]
+    

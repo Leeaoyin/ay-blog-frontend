@@ -1,0 +1,10 @@
+.card-custom-hover-style {
+    transition-property: all;
+  }
+  
+  .card-custom-hover-style:hover {
+    transform: translateY(-4px);
+  }
+  .card-hover-style:hover {
+      background-color: #E8F7FF;
+  }
