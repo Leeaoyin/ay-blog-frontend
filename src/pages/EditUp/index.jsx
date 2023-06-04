@@ -40,7 +40,6 @@ export default function EditUp() {
         console.log(vd.getHTML());
         setCompleteLoading(!completeLoading);
         setTimeout(()=>{
-            //   Message.success('登陆成功');
             setSuccess(!success);
             },1000);
         
