@@ -34,7 +34,8 @@
 .layout-basic-demo .arco-layout-footer {
   height:40px;
   line-height: 40px;
-  background-color: rgb(var(--arcoblue-1));
+  background-color: #3b3e43;
+  color: #7d8186;
 }
 
 

@@ -6,11 +6,10 @@ import { Card,
         Tag,
         Typography,
         Button,
-        Avatar,
         Space
     } from '@arco-design/web-react';
 
-import { IconThumbUp, IconShareInternal, IconMore } from '@arco-design/web-react/icon';
+import { IconThumbUp, IconShareInternal, IconMore,IconArrowRight } from '@arco-design/web-react/icon';
 
 import './style.css';
 
@@ -36,19 +35,26 @@ const ellipsisConfig = {
                         ellipsisStr: '......'
                     };
 
-export default function RecomContent({id, title, time, tags, content, author}) {
+export default function RecomContent(props) {
+
+
+
+    const {id, title, time, tags, content, author} = props;
     
 
-
+    
   return (
+      
     <>
 
         <Card
-            style={{ minWidth: '700px',width: '700px' }}
+            style={{ minWidth: '700px',width: '90%',margin: '0px auto' }}
             className='card-hover-style'
             title={
                     <Space>
-                        <Typography.Paragraph copyable style={{fontWeight: 'bold',marginTop: '10px'}}>{title}</Typography.Paragraph>
+                        <Typography.Paragraph copyable style={{fontWeight: 'bold',marginTop: '10px'}}>
+                            <Link onClick={()=>Message.success(`${id}`)}>{title}</Link>
+                        </Typography.Paragraph>
                     </Space>
                 }
             hoverable
@@ -61,9 +67,13 @@ export default function RecomContent({id, title, time, tags, content, author}) {
                 }
                 actions={[
                             <Space>
-                                    <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>{author||'未知'}</span>
-                                    <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>/{time}</span>
-                                    <Button type='text' onClick={()=>Message.success(`${id}`)}>更多</Button>
+                                    {/* <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>{author||'未知'}</span> */}
+                                    {/* <span>/</span> */}
+                                    <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>{time}</span>
+                                    <span>/</span>
+                                    <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>12324次</span>
+                                    {/* <Link type='text' onClick={()=>Message.success(`${id}`)}>更多</Link> */}
+                                    {/* <IconArrowRight /> */}
                             </Space>
                         ]}
         >

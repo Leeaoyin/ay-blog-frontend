@@ -83,7 +83,7 @@ export default function Index() {
       <Layout style={{ height: '400px' }}>
           <Affix>
           <div className='head-root'>
-          <Header style={{padding: 'auto 100px',marginTop:'10px'}}>
+          <Header style={{padding: 'auto 100px',marginTop:'10px',width: '100%'}}>
             
             <div className='menu-demo'>
               <Menu mode='horizontal'  defaultSelectedKeys={['1']} width={50} theme='dark' style={{borderRadius: '10px'}}>
@@ -109,10 +109,10 @@ export default function Index() {
                 </MenuItem>
                 <Space size={40}>
                 
-                <NavLink to={'home'}><MenuItem key='1'>主页 </MenuItem></NavLink>
-                <NavLink to={'recommend'}><MenuItem key='2'>推荐 </MenuItem></NavLink>
-                <NavLink to={'share'}><MenuItem key='3'>分享 </MenuItem></NavLink>
-                <NavLink to={'share'}><MenuItem key='4'>发布 </MenuItem></NavLink>
+                    <NavLink to={'home'}><MenuItem key='1'>主页 </MenuItem></NavLink>
+                    <NavLink to={'recommend'}><MenuItem key='2'>推荐 </MenuItem></NavLink>
+                    <NavLink to={'share'}><MenuItem key='3'>分享 </MenuItem></NavLink>
+                    <NavLink to={'edit'}><MenuItem key='4'>发布 </MenuItem></NavLink>
                 </Space>
               </Menu>
             </div>
@@ -121,8 +121,8 @@ export default function Index() {
           </div>
 
           </Affix>
-          <Divider/>
-          <Content style={{paddingTop: '20px'}}>
+          
+          <Content style={{paddingTop: '10px'}}>
               <Outlet />
           </Content>
 

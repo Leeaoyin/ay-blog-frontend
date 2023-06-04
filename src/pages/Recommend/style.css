@@ -12,3 +12,24 @@
   .list-demo-action-layout .arco-list-item-action .arco-icon {
     margin: 0 4px;
   }
+
+  /* .grid-demo .arco-col {
+    height: 48px;
+    line-height: 48px; 
+    color: var(--color-white);
+    text-align: center;
+  } */
+  
+  /* .grid-demo .arco-col:nth-child(2n + 1) {
+    background-color: var(--color-primary-light-4);
+    border: 1px solid black;
+  } */
+  
+  .grid-demo .arco-col:nth-child(2n) {
+    /* border: 1px solid blue; */
+    text-align: center;
+    padding-top: 50px;
+
+    /* margin: 10px auto; */
+    /* background-color: rgba(var(--arcoblue-6), 0.9); */
+  }
