@@ -13,8 +13,8 @@
 
 .layout-basic-demo .arco-layout-content {
   /* color: var(--color-white); */
-  background-color: var(--color-neutral-2);
-  font-stretch: condensed;
+  background-color: var(--color-neutral-1);
+  /* font-stretch: condensed; */
   min-width: 800px;
   display: flex;
   justify-content: center;

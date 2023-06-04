@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { NavLink, useNavigate, Outlet } from 'react-router-dom';
+import { NavLink, useNavigate, Outlet, useLocation  } from 'react-router-dom';
 
-import { Layout, Menu, Avatar,  Space, Divider, Affix, Button,Popover, Typography } from '@arco-design/web-react';
+import { Layout, Menu, Avatar,  Space, Divider, Affix, Button,Popover, Typography,BackTop } from '@arco-design/web-react';
 import { IconArrowRight,IconUser} from '@arco-design/web-react/icon';
 
 import './style.css'
@@ -16,6 +16,7 @@ const MenuItem = Menu.Item;
 
 export default function Index() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [islogin, setIsLogin] = useState(false);
 
 
@@ -80,13 +81,15 @@ export default function Index() {
 
   return (
     <div className='layout-basic-demo' style={{margin: 'auto 250px'}}>
+        
+        
       <Layout style={{ height: '400px' }}>
-          <Affix>
+          
           <div className='head-root'>
-          <Header style={{padding: 'auto 100px',width: '100%'}}>
+          <Header style={{padding: 'auto 100px',width: '100%'}} id="head-up">
             
             <div className='menu-demo'>
-              <Menu mode='horizontal'  defaultSelectedKeys={['1']} width={50} theme='dark' style={{borderRadius: '10px'}}>
+              <Menu mode='horizontal'  defaultSelectedKeys={['/index/home']} selectedKeys={location.pathname} width={50} theme='dark' style={{borderRadius: '10px'}}>
                 
               <MenuItem
                   key='0'
@@ -109,10 +112,10 @@ export default function Index() {
                 </MenuItem>
                 <Space size={40}>
                 
-                    <NavLink to={'home'}><MenuItem key='1'>主页 </MenuItem></NavLink>
-                    <NavLink to={'recommend'}><MenuItem key='2'>推荐 </MenuItem></NavLink>
-                    <NavLink to={'share'}><MenuItem key='3'>分享 </MenuItem></NavLink>
-                    <NavLink to={'edit'}><MenuItem key='4'>发布 </MenuItem></NavLink>
+                    <NavLink to={'home'}><MenuItem key='/index/home'>主页 </MenuItem></NavLink>
+                    <NavLink to={'recommend'}><MenuItem key='/index/recommend'>推荐 </MenuItem></NavLink>
+                    <NavLink to={'share'}><MenuItem key='/index/share'>分享 </MenuItem></NavLink>
+                    <NavLink to={'edit'}><MenuItem key='/index/edit'>发布 </MenuItem></NavLink>
                 </Space>
               </Menu>
             </div>
@@ -120,15 +123,16 @@ export default function Index() {
           </Header>
           </div>
 
-          </Affix>
+         
           
           <Content style={{paddingTop: '10px'}}>
               <Outlet />
           </Content>
-
           <Footer>
             <Foot/>
           </Footer>
+          
+          
       </Layout>
       
     </div>

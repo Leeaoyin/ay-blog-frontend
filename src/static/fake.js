@@ -116,6 +116,76 @@ export const recommend_info = [
                 time: '2023-5-6 11:23:57',
                 content: '开始的时候，Date既要承载日期信息，又要做日期之间的转换，还要做不同日期格式的显示，职责较繁杂；后来从JDK 1.1 开始，这三项职责分开了'
             }
+        },
+        {
+            id: '003',
+            author:{
+                name: ''
+                
+            },
+            article_info:{
+                id: '89789345463',
+                title: 'Java8新特性——摆脱坑爹的时间API',
+                tags: ['JDK8','LocalDate'],
+                time: '2023-5-6 11:23:57',
+                content: '开始的时候，Date既要承载日期信息，又要做日期之间的转换，还要做不同日期格式的显示，职责较繁杂；后来从JDK 1.1 开始，这三项职责分开了'
+            }
+        },
+        {
+            id: '003',
+            author:{
+                name: ''
+                
+            },
+            article_info:{
+                id: '89789345463',
+                title: 'Java8新特性——摆脱坑爹的时间API',
+                tags: ['JDK8','LocalDate'],
+                time: '2023-5-6 11:23:57',
+                content: '开始的时候，Date既要承载日期信息，又要做日期之间的转换，还要做不同日期格式的显示，职责较繁杂；后来从JDK 1.1 开始，这三项职责分开了'
+            }
+        },
+        {
+            id: '003',
+            author:{
+                name: ''
+                
+            },
+            article_info:{
+                id: '89789345463',
+                title: 'Java8新特性——摆脱坑爹的时间API',
+                tags: ['JDK8','LocalDate'],
+                time: '2023-5-6 11:23:57',
+                content: '开始的时候，Date既要承载日期信息，又要做日期之间的转换，还要做不同日期格式的显示，职责较繁杂；后来从JDK 1.1 开始，这三项职责分开了'
+            }
+        },
+        {
+            id: '003',
+            author:{
+                name: ''
+                
+            },
+            article_info:{
+                id: '89789345463',
+                title: 'Java8新特性——摆脱坑爹的时间API',
+                tags: ['JDK8','LocalDate'],
+                time: '2023-5-6 11:23:57',
+                content: '开始的时候，Date既要承载日期信息，又要做日期之间的转换，还要做不同日期格式的显示，职责较繁杂；后来从JDK 1.1 开始，这三项职责分开了'
+            }
+        },
+        {
+            id: '003',
+            author:{
+                name: ''
+                
+            },
+            article_info:{
+                id: '89789345463',
+                title: 'Java8新特性——摆脱坑爹的时间API',
+                tags: ['JDK8','LocalDate'],
+                time: '2023-5-6 11:23:57',
+                content: '开始的时候，Date既要承载日期信息，又要做日期之间的转换，还要做不同日期格式的显示，职责较繁杂；后来从JDK 1.1 开始，这三项职责分开了'
+            }
         }
 
     ]

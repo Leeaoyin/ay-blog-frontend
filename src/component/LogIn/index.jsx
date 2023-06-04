@@ -29,7 +29,7 @@ export default function LogIn() {
   const checkLogin = ()=>{
     setLoginLoding(!loginLoding);
     setTimeout(()=>{
-      Message.success('登陆成功');
+    //   Message.success('登陆成功');
       setLoginLoding(!loginLoding);
       navigate('/index/home');
       

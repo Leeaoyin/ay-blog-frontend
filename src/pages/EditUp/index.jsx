@@ -2,7 +2,8 @@ import React from 'react'
 import { Button,
         Space,
         Input,
-        Result } from '@arco-design/web-react';
+        Result,
+        Alert  } from '@arco-design/web-react';
         
 import { useNavigate  } from 'react-router-dom';
         
@@ -27,7 +28,7 @@ export default function EditUp() {
             "type": "text",
             "max": 800
           },
-        height: '95%',
+        height: '90%',
         mode: 'sv'
 
       });
@@ -61,11 +62,14 @@ export default function EditUp() {
             :
             (
                 <>
+                <Alert content='图片功能正在完善中，暂不支持~' closable />
                     <div style={{width: '100%',height: '40px'}}>
+                    
                         <Space>
                             <Input style={{ width: 600 }} status='warning' placeholder='请输入标题' />
                             <Button type="primary" onClick={handleMarkdown}> 发布 </Button>
                             <Button type="text"> 取消 </Button>
+                            
                         </Space>
                     </div>
                     <div id="vditor"/>

@@ -12,7 +12,8 @@ import { Input,
         Affix,
         Card,
         Link ,
-        Pagination 
+        Pagination ,
+        BackTop
     } from '@arco-design/web-react'
 // import { IconHeart, IconMessage, IconStar } from '@arco-design/web-react/icon';
 
@@ -37,6 +38,11 @@ export default function Recommend() {
 
   return (
         <div style={{ width: '100%'}}>
+            {/* <BackTop
+                visibleHeight={1}
+                  style={{ position: 'absolute' }}
+                target={() => document.getElementById('head-up')}
+                /> */}
             <Row  className='grid-demo' gutter={24}>
                 <Col span={2}>
                     
@@ -85,6 +91,7 @@ export default function Recommend() {
                     </Space>
                 </Col>
                 <Col span={6}>
+                    <Affix>
                     <Space direction='vertical' style={{}}>
                         
                         
@@ -120,6 +127,7 @@ export default function Recommend() {
                             />
                             </Card>
                     </Space>
+                    </Affix>
                 
                 </Col>
                 <Col span={2}>

@@ -67,11 +67,11 @@ export default function RecomContent(props) {
                 }
                 actions={[
                             <Space>
-                                    {/* <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>{author||'未知'}</span> */}
+                                    <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>{author||'未知'}</span>
                                     {/* <span>/</span> */}
                                     <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>{time}</span>
-                                    <span>/</span>
-                                    <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>12324次</span>
+                                    {/* <span>/</span> */}
+                                    <span style={{fontSize: '12px',fontColor:'#F7F8FA'}}>124次</span>
                                     {/* <Link type='text' onClick={()=>Message.success(`${id}`)}>更多</Link> */}
                                     {/* <IconArrowRight /> */}
                             </Space>
