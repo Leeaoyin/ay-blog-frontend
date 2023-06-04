@@ -4,6 +4,7 @@ import { Button,
         Input,
         Result,
         Alert  } from '@arco-design/web-react';
+import { IconCheck,IconClose } from '@arco-design/web-react/icon';
         
 import { useNavigate  } from 'react-router-dom';
         
@@ -15,6 +16,7 @@ export default function EditUp() {
 
     const [vd, setVd] = React.useState();
     const [success, setSuccess] = React.useState(false);
+    const [completeLoading, setCompleteLoading] = React.useState(false);
 
     const navigate=useNavigate()
 
@@ -36,7 +38,12 @@ export default function EditUp() {
 
     const handleMarkdown = (e)=>{
         console.log(vd.getHTML());
-        setSuccess(!success);
+        setCompleteLoading(!completeLoading);
+        setTimeout(()=>{
+            //   Message.success('登陆成功');
+            setSuccess(!success);
+            },1000);
+        
     }
 
     const goDetailed = ()=>{
@@ -67,8 +74,8 @@ export default function EditUp() {
                     
                         <Space>
                             <Input style={{ width: 600 }} status='warning' placeholder='请输入标题' />
-                            <Button type="primary" onClick={handleMarkdown}> 发布 </Button>
-                            <Button type="text"> 取消 </Button>
+                            <Button type="primary" icon={<IconCheck />} onClick={handleMarkdown} loading={completeLoading}> 发布 </Button>
+                            <Button type="text" icon={<IconClose />}> 取消 </Button>
                             
                         </Space>
                     </div>
