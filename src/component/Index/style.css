@@ -25,7 +25,8 @@
 
 .arco-layout-content {
   /* background-color: white !important; */
-    min-height: 90vh;
+    height: auto;
+    /* display: flex; */
 }
 
 

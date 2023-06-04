@@ -11,7 +11,8 @@ import { Input,
         Calendar,
         Affix,
         Card,
-        Link 
+        Link ,
+        Pagination 
     } from '@arco-design/web-react'
 // import { IconHeart, IconMessage, IconStar } from '@arco-design/web-react/icon';
 
@@ -45,16 +46,17 @@ export default function Recommend() {
                         {/* <InputSearch
                             allowClear={true}
                             placeholder='请输入搜索内容'
-                            style={{ minWidth: '700px',width: '100%', marginBottom: '10px',color: 'white' }}
+                            style={{ minWidth: '700px',width: '100%', marginBottom: '10px' }}
                             // height= {}
                             searchButton={true}
                             onSearch={doSearch}
                         /> */}
-                        <Divider/> 
+                        {/* <Divider/>  */}
                         {
                             articleList.length!= 0 ? 
                             articleList.map((recommends)=>{
                                 return (
+                                    <>
                                     <RecomContent
                                         key={recommends.id} 
                                         title={recommends.article_info.title} 
@@ -64,6 +66,7 @@ export default function Recommend() {
                                         content={recommends.article_info.content}
                                         author={recommends.author.name}
                                     />
+                                    </>
                                 )
                             }) 
 
@@ -78,15 +81,16 @@ export default function Recommend() {
                                     />
                                 )
                         }
+                        <Pagination simple total={articleList.length} size='small' pageSize={2} />
                     </Space>
                 </Col>
                 <Col span={6}>
-                    <Space direction='vertical'>
+                    <Space direction='vertical' style={{}}>
                         
                         
                         <Card style={{ width: 360 }}
-                            title='Arco Card'
-                            extra={<Link>More</Link>}
+                            title='热门'
+                            extra={<Link>立即查看</Link>}
                         >
                             ByteDance's core product, Toutiao ('Headlines'), is a content platform in China and around
                             the world. Toutiao started out as a news recommendation engine and gradually evolved into a
@@ -107,10 +111,10 @@ export default function Recommend() {
                             }
                             >
                             <Meta
-                                title='Card Title'
+                                title='关注微信公众号'
                                 description={
                                 <>
-                                    Card content <br /> Card content
+                                    Card content
                                 </>
                                 }
                             />
@@ -119,7 +123,6 @@ export default function Recommend() {
                 
                 </Col>
                 <Col span={2}>
-                    
                 </Col>
             </Row>
         </div>
