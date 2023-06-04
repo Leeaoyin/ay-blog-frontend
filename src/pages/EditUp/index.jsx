@@ -73,7 +73,7 @@ export default function EditUp() {
                     <div style={{width: '100%',height: '40px'}}>
                     
                         <Space>
-                            <Input style={{ width: 600 }} status='warning' placeholder='请输入标题' />
+                            <Input style={{ width: 600 }} status='warning' placeholder='请输入标题' maxLength={50} showWordLimit/>
                             <Button type="primary" icon={<IconCheck />} onClick={handleMarkdown} loading={completeLoading}> 发布 </Button>
                             <Button type="text" icon={<IconClose />}> 取消 </Button>
                             
