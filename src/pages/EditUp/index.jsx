@@ -50,9 +50,6 @@ export default function EditUp() {
             },1000);   
     }
 
-    const goDetailed = ()=>{
-        navigate('/index/recommend');
-    }
 
     const inputTitle = (title,e)=>{
         setArticleInfo({...articleInfo,title});
@@ -73,8 +70,7 @@ export default function EditUp() {
                     title='发布成功！'
                     subTitle='内容已经成功发布~'
                     extra={[
-                    
-                    <Button key='back' type='primary' onClick={goDetailed}>
+                    <Button key='back' type='primary' onClick={()=>navigate('/index/recommend')}>
                         去查看
                     </Button>,
                     ]}
