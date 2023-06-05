@@ -87,15 +87,15 @@ export default function Recommend() {
                                     />
                                 )
                         }
-                        <Pagination simple total={articleList.length} size='small' pageSize={2} />
+                        {/* <Pagination simple total={articleList.length} size='small' pageSize={2} /> */}
                     </Space>
                 </Col>
                 <Col span={6}>
-                    <Affix>
-                    <Space direction='vertical' style={{}}>
+                    <Affix offsetTop={20}>
+                    <Space direction='vertical' style={{width: '100%'}}>
                         
                         
-                        <Card style={{ width: 360 }}
+                        <Card style={{ width: 260,margin: '0px auto' }}
                             title='热门'
                             extra={<Link>立即查看</Link>}
                         >
@@ -106,7 +106,7 @@ export default function Recommend() {
                         
                         <Card
                             hoverable
-                            style={{ width: 360 }}
+                            style={{ width: 260,margin: '0px auto' }}
                             cover={
                                 <div style={{ height: 204, overflow: 'hidden' }}>
                                 <img

@@ -3,7 +3,7 @@
 .layout-basic-login .arco-layout-sider,
 .layout-basic-login .arco-layout-sider-children {
   /* color: var(--color-white); */
-  background-color: var(--color-neutral-2);
+  /* background-color: var(--color-neutral-2); */
   text-align: center;
   font-stretch: condensed;
   display: flex;

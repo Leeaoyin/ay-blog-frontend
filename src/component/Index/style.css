@@ -3,17 +3,17 @@
 .layout-basic-demo .arco-layout-sider,
 .layout-basic-demo .arco-layout-sider-children {
   /* color: var(--color-white); */
-  background-color: var(--color-neutral-2);
+  background-color: #f7f7f7;
   text-align: center;
-  min-width: 800px;
+  min-width: 1200px;
   font-stretch: condensed;
   display: flex;
   justify-content: center;
 }
 
 .layout-basic-demo .arco-layout-content {
-  background-color: var(--color-neutral-2);
-  min-width: 800px;
+  background-color: #f7f7f7;
+  min-width: 1200px;
   display: flex;
   justify-content: center;
 }

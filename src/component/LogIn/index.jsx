@@ -45,7 +45,7 @@ export default function LogIn() {
         <Content>
         <Tabs className='index-module__loginCard--w1Ov0' defaultActiveTab='1' style={{ width: 500, margin:'auto' }}>
           <TabPane key='1' title='账号' >
-            <Space size='large'>
+            
                 <Space size='large'>
                     <Form style={{ width: 350,margin: '0 auto'}} autoComplete='off'>
                         <Space direction='vertical'>
@@ -63,7 +63,7 @@ export default function LogIn() {
                           </FormItem>  
                           <FormItem wrapperCol={{ offset: 7 }}>
                             <Space direction='vertical'>
-                                <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
+                                
                                 <div style={{textAlign: 'center'}}>
                                     <Space>
                                         <IconFont type='icon-web_wx' style={{ fontSize: 30, marginRight: 10 }} />
@@ -71,12 +71,13 @@ export default function LogIn() {
                                         <IconFont type='icon-QQ' style={{ fontSize: 30, marginRight: 10 }}/>
                                     </Space>
                                 </div>
+                                <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
                             </Space>
                           </FormItem>
                         </Space>
                     </Form>
                 </Space>
-        </Space>
+        
       </TabPane>
       <TabPane key='2' title='邮箱'>
           <Space
@@ -93,11 +94,9 @@ export default function LogIn() {
                           </FormItem>
                           <FormItem wrapperCol={{ offset: 2 }}>
                             <Button type='primary' htmlType='submit' long onClick={()=>{Message.info('邮箱功能完善中~')}}>登录/注册</Button>
-                        
                           </FormItem>  
                           <FormItem wrapperCol={{ offset: 7 }}>
                           <Space direction='vertical'>
-                                <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
                                 <div style={{textAlign: 'center'}}>
                                     <Space>
                                     <IconFont type='icon-web_wx' style={{ fontSize: 30, marginRight: 10 }} />
@@ -105,6 +104,7 @@ export default function LogIn() {
                                     <IconFont type='icon-QQ' style={{ fontSize: 30, marginRight: 10 }}/>
                                     </Space>
                                 </div>
+                                <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
                             </Space>
                           </FormItem>
                         </Space>

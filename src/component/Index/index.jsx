@@ -83,7 +83,7 @@ export default function Index() {
     <div className='layout-basic-demo' style={{margin: 'auto 250px'}}>
         
         
-      <Layout style={{ height: '400px' }}>
+      <Layout style={{ minHeight: '400px' }}>
           
           <div className='head-root'>
           <Header style={{padding: 'auto 100px',width: '100%'}} id="head-up">
