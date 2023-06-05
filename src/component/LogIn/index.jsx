@@ -8,7 +8,8 @@ import { Layout,
          Message,
          Form,
          Input,
-         Button
+         Button,
+         Icon
         } from '@arco-design/web-react';
 
 import { useNavigate  } from 'react-router-dom';
@@ -20,6 +21,7 @@ import './style.css';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 const Content = Layout.Content;
+const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_lzab193mje9.js'});
 
 
 export default function LogIn() {
@@ -60,7 +62,16 @@ export default function LogIn() {
                             </Space>
                           </FormItem>  
                           <FormItem wrapperCol={{ offset: 7 }}>
-                            <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
+                            <Space direction='vertical'>
+                                <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
+                                <div style={{textAlign: 'center'}}>
+                                    <Space>
+                                        <IconFont type='icon-web_wx' style={{ fontSize: 30, marginRight: 10 }} />
+                                        <IconFont type='icon-dingtalk' style={{ fontSize: 30, marginRight: 10 }} />
+                                        <IconFont type='icon-QQ' style={{ fontSize: 30, marginRight: 10 }}/>
+                                    </Space>
+                                </div>
+                            </Space>
                           </FormItem>
                         </Space>
                     </Form>
@@ -85,7 +96,16 @@ export default function LogIn() {
                         
                           </FormItem>  
                           <FormItem wrapperCol={{ offset: 7 }}>
-                            <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
+                          <Space direction='vertical'>
+                                <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
+                                <div style={{textAlign: 'center'}}>
+                                    <Space>
+                                    <IconFont type='icon-web_wx' style={{ fontSize: 30, marginRight: 10 }} />
+                                    <IconFont type='icon-dingtalk' style={{ fontSize: 30, marginRight: 10 }} />
+                                    <IconFont type='icon-QQ' style={{ fontSize: 30, marginRight: 10 }}/>
+                                    </Space>
+                                </div>
+                            </Space>
                           </FormItem>
                         </Space>
                     </Form>

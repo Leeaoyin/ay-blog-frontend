@@ -18,6 +18,8 @@ export default function EditUp() {
 
     const [vd, setVd] = React.useState(); // markdown edit
     const [success, setSuccess] = React.useState(false);
+    const [title, setTitle] = React.useState('');
+    const [tags, setTags] = React.useState([]);
     const [completeLoading, setCompleteLoading] = React.useState(false);
     const [articleInfo, setArticleInfo] = React.useState({});  //object for submit article api
 
@@ -59,6 +61,11 @@ export default function EditUp() {
         setArticleInfo({...articleInfo,tags});
     }
 
+    const clearAllInput = ()=>{
+        setTitle('');
+        setTags([]);
+    }
+
 
   return (
     <div style={{width: '100%'}}>
@@ -83,10 +90,10 @@ export default function EditUp() {
                     <div style={{width: '100%',height: '40px'}}>
                     
                         <Space>
-                            <Input style={{ width: 600 }} status='warning' onChange={inputTitle} placeholder='请输入标题' maxLength={50} showWordLimit/>
-                            <InputTag allowClear placeholder='输入标签按回车确认' onChange={inputTags} style={{ width: 600 }} status='warning'/>
-                            <Button type="primary" icon={<IconCheck />} onClick={submitArticle} loading={completeLoading}> 发布 </Button>
-                            <Button type="text" icon={<IconClose />}> 清空 </Button>
+                            <Input allowClear style={{ width: 600 }} status='warning'  onChange={inputTitle} placeholder='请输入标题' maxLength={50} showWordLimit />
+                            <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags} style={{ width: 600 }} status='warning' />
+                            <Button type="text" icon={<IconCheck />} onClick={submitArticle} loading={completeLoading}> 发布 </Button>
+                            {/* <Button type="text" icon={<IconClose />} onClick={clearAllInput}> 清空 </Button> */}
                             
                             
                         </Space>
