@@ -3,7 +3,9 @@ import { Button,
         Space,
         Input,
         Result,
-        Alert  } from '@arco-design/web-react';
+        Alert,
+        InputTag  } from '@arco-design/web-react';
+        
 import { IconCheck,IconClose } from '@arco-design/web-react/icon';
         
 import { useNavigate  } from 'react-router-dom';
@@ -14,9 +16,11 @@ import './style.css';
 
 export default function EditUp() {
 
-    const [vd, setVd] = React.useState();
+    const [vd, setVd] = React.useState(); // markdown edit
     const [success, setSuccess] = React.useState(false);
     const [completeLoading, setCompleteLoading] = React.useState(false);
+    const [articleInfo, setArticleInfo] = React.useState({});  //object for submit article api
+
 
     const navigate=useNavigate()
 
@@ -36,18 +40,29 @@ export default function EditUp() {
       });
     }, []);
 
-    const handleMarkdown = (e)=>{
-        console.log(vd.getHTML());
+
+    const submitArticle = (e)=>{
+        let content = vd.getHTML();
+        setArticleInfo({...articleInfo,content});
         setCompleteLoading(!completeLoading);
         setTimeout(()=>{
             setSuccess(!success);
-            },1000);
-        
+            },1000);   
     }
 
     const goDetailed = ()=>{
         navigate('/index/recommend');
     }
+
+    const inputTitle = (title,e)=>{
+        setArticleInfo({...articleInfo,title});
+    }
+
+    const inputTags = (tags,reason)=>{
+        setArticleInfo({...articleInfo,tags});
+    }
+
+
   return (
     <div style={{width: '100%'}}>
         {
@@ -72,9 +87,11 @@ export default function EditUp() {
                     <div style={{width: '100%',height: '40px'}}>
                     
                         <Space>
-                            <Input style={{ width: 600 }} status='warning' placeholder='请输入标题' maxLength={50} showWordLimit/>
-                            <Button type="primary" icon={<IconCheck />} onClick={handleMarkdown} loading={completeLoading}> 发布 </Button>
-                            <Button type="text" icon={<IconClose />}> 取消 </Button>
+                            <Input style={{ width: 600 }} status='warning' onChange={inputTitle} placeholder='请输入标题' maxLength={50} showWordLimit/>
+                            <InputTag allowClear placeholder='输入标签按回车确认' onChange={inputTags} style={{ width: 600 }} status='warning'/>
+                            <Button type="primary" icon={<IconCheck />} onClick={submitArticle} loading={completeLoading}> 发布 </Button>
+                            <Button type="text" icon={<IconClose />}> 清空 </Button>
+                            
                             
                         </Space>
                     </div>
