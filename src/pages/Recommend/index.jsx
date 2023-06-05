@@ -38,16 +38,30 @@ export default function Recommend() {
 
   return (
         <div style={{ width: '100%'}}>
-            {/* <BackTop
-                visibleHeight={1}
-                  style={{ position: 'absolute' }}
-                target={() => document.getElementById('head-up')}
-                /> */}
+            
             <Row  className='grid-demo' gutter={24}>
-                <Col span={2}>
-                    
+                <Col span={6}>
+                    <Affix offsetTop={20}>
+                        <Space direction='vertical' style={{width: '100%'}}>
+                            <InputSearch
+                                    allowClear={true}
+                                    placeholder='请输入搜索内容'
+                                    // style={{ width: '260px', margin: '0px auto' }}
+                                    // height= {}
+                                    searchButton={true}
+                                    onSearch={doSearch}
+                            />
+                            <Calendar
+                                panel
+                                panelWidth={260}
+                                panelTodayBtn
+                                style={{ margin: '0px auto' }}
+                                onChange={(a) => console.log(a)}
+                            />
+                        </Space>
+                    </Affix>
                 </Col>
-                <Col span={14}>
+                <Col span={12}>
                 <Space direction='vertical' style={{width: '100%'}}>
                         {/* <InputSearch
                             allowClear={true}
@@ -56,8 +70,8 @@ export default function Recommend() {
                             // height= {}
                             searchButton={true}
                             onSearch={doSearch}
-                        /> */}
-                        {/* <Divider/>  */}
+                        />
+                        <Divider/>  */}
                         {
                             articleList.length!= 0 ? 
                             articleList.map((recommends)=>{
@@ -94,7 +108,6 @@ export default function Recommend() {
                     <Affix offsetTop={20}>
                     <Space direction='vertical' style={{width: '100%'}}>
                         
-                        
                         <Card style={{ width: 260,margin: '0px auto' }}
                             title='热门'
                             extra={<Link>立即查看</Link>}
@@ -130,8 +143,8 @@ export default function Recommend() {
                     </Affix>
                 
                 </Col>
-                <Col span={2}>
-                </Col>
+                {/* <Col span={2}>
+                </Col> */}
             </Row>
         </div>
   )

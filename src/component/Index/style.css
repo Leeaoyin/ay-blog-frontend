@@ -5,7 +5,7 @@
   /* color: var(--color-white); */
   background-color: #f7f7f7;
   text-align: center;
-  min-width: 1200px;
+  min-width: 1350px;
   font-stretch: condensed;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@
 
 .layout-basic-demo .arco-layout-content {
   background-color: #f7f7f7;
-  min-width: 1200px;
+  min-width: 1350px;
   display: flex;
   justify-content: center;
 }

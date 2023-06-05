@@ -22,6 +22,7 @@ export default function EditUp() {
     const [tags, setTags] = React.useState([]);
     const [completeLoading, setCompleteLoading] = React.useState(false);
     const [articleInfo, setArticleInfo] = React.useState({});  //object for submit article api
+    const inputRef = React.useRef();
 
 
     const navigate=useNavigate()
@@ -40,6 +41,7 @@ export default function EditUp() {
         mode: 'sv'
 
       });
+      inputRef.current.focus();
     }, []);
 
 
@@ -89,9 +91,9 @@ export default function EditUp() {
                 <Alert content='图片功能正在完善中，暂不支持~' closable />
                     <div style={{width: '100%',height: '40px'}}>
                     
-                        <Space>
-                            <Input allowClear style={{ width: 600 }} status='warning'  onChange={inputTitle} placeholder='请输入标题' maxLength={50} showWordLimit />
-                            <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags} style={{ width: 600 }} status='warning' />
+                        <Space size='large'>
+                            <Input ref={inputRef} allowClear style={{ width: 550 }} status='warning'  onChange={inputTitle} placeholder='请输入标题' maxLength={30} showWordLimit />
+                            <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags} style={{ width: 550 }} status='warning' />
                             <Button type="text" icon={<IconCheck />} onClick={submitArticle} loading={completeLoading}> 发布 </Button>
                             {/* <Button type="text" icon={<IconClose />} onClick={clearAllInput}> 清空 </Button> */}
                             
