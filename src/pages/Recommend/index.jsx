@@ -194,6 +194,8 @@ export default function Recommend() {
                 {/* <Col span={2}>
                 </Col> */}
             </Row>
+
+            <Divider style={{borderBottomStyle: 'dashed'}} orientation='center'><span>到底啦~~</span></Divider>
         </div>
   )
 }
