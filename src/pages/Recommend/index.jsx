@@ -125,13 +125,13 @@ export default function Recommend() {
                                             style={{
                                                 cursor: 'pointer',
                                             }}
-                                            onClick={()=>window.location.href='https://github.com/Leeaoyin'}
+                                            onClick={()=>window.open('https://github.com/Leeaoyin', "_blank")}
                                             />
                                         </span>
                                 </Space>
                             </Card>
                     
-                        <Card style={{ width: '280px' }}
+                        <Card style={{ width: '280px' }} hoverable
                             // title='热门'
                             // extra={<Link>立即查看</Link>}
                         >
@@ -142,8 +142,8 @@ export default function Recommend() {
                                 dataSource={[
                                 
                                 'java工程师成神之路',
-                                'test',
-                                'test',
+                                '代码大全',
+                                '时间管理大师',
                                 ]}
                                 render={(item, index) => <List.Item key={index}><Link href='#' icon>{item}</Link></List.Item>}
                             />

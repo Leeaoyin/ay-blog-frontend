@@ -49,7 +49,7 @@ export default function Home() {
     
   return (
     <div>
-      <Space wrap size={'large'} align='center'>
+      <Space wrap size={'large'} align='center' style={{margin: 'auto 100px'}}>
         {/* <Banner/> */}
       
       {

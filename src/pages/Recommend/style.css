@@ -41,6 +41,6 @@
         background-position: center 0;
   }
 
-  .arco-calendar-panel {
-    margin-right: 0 !important;
+  .arco-card.arco-card-size-default.arco-card-bordered.arco-card-hoverable:hover {
+    box-shadow: 4px 4px 4px 0px rgba(1, 1, 1,.1);
 }
