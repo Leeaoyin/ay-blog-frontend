@@ -86,13 +86,13 @@ export default function Index() {
   };
 
   return (
-    <div className='layout-basic-demo' style={{margin: 'auto 250px'}}>
+    <div className='layout-basic-demo' >
         
         
       <Layout style={{ minHeight: '400px' }}>
           
           <div className='head-root'>
-          <Header style={{padding: 'auto 100px',width: '100%'}} id="head-up">
+          <Header style={{width: '100%'}} id="head-up">
             
             <div className='menu-demo'>
               <Menu mode='horizontal'  defaultSelectedKeys={['/index/home']} selectedKeys={location.pathname} width={50} theme='dark' style={{borderRadius: '10px'}}>

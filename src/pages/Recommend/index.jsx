@@ -38,24 +38,16 @@ export default function Recommend() {
   }
 
   return (
-        <div style={{ width: '100%'}} className="recommend-content">
+        <div style={{ }} className="recommend-content">
             <Divider style={{borderBottomStyle: 'dashed'}} orientation='center'><IconDoubleDown /></Divider>
             
             <Row  className='grid-demo' gutter={24} >
                 <Col span={6}>
                     {/* <Affix offsetTop={20}> */}
                         <Space direction='vertical' style={{width: '100%'}}>
-                            {/* <InputSearch
-                                    allowClear={true}
-                                    placeholder='请输入搜索内容'
-                                    // style={{ width: '260px', margin: '0px auto' }}
-                                    // height= {}
-                                    searchButton={true}
-                                    onSearch={doSearch}
-                            /> */}
                             <Calendar
                                 panel
-                                panelWidth={'90%'}
+                                panelWidth={'280px'}
                                 panelTodayBtn
                                 style={{ margin: '0px auto' }}
                                 onChange={(a) => console.log(a)}
@@ -70,7 +62,7 @@ export default function Recommend() {
                         <InputSearch
                             allowClear={true}
                             placeholder='请输入搜索内容'
-                            style={{ width: '100%', marginBottom: '10px' }}
+                            style={{ width: '600px', marginBottom: '10px' }}
                             // height= {}
                             searchButton={true}
                             onSearch={doSearch}
@@ -104,25 +96,18 @@ export default function Recommend() {
                                     />
                                 )
                         }
-                        {/* <Pagination simple total={articleList.length} size='small' pageSize={2} /> */}
                     </Space>
                 </Col>
                 <Col span={6}>
                     <Affix offsetTop={20}>
-                    <Space direction='vertical' style={{width: '100%'}}>
+                    <Space direction='vertical' >
 
-                    <Card
-                                className='card-with-icon-hover'
+                            <Card
+                                // className='card-with-icon-hover'
                                 hoverable
-                                style={{ width: '80%',margin: '0px auto' }}
+                                style={{ width: '280px' }}
                             >
-                                <Space
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'space-between',
-                                    }}
-                                    >
+                                <Space>
                                     <Space>
                                         <Avatar
                                         style={{
@@ -146,7 +131,7 @@ export default function Recommend() {
                                 </Space>
                             </Card>
                     
-                        <Card style={{ width: '80%',margin: '0px auto' }}
+                        <Card style={{ width: '280px' }}
                             // title='热门'
                             // extra={<Link>立即查看</Link>}
                         >
@@ -167,7 +152,7 @@ export default function Recommend() {
                         
                         <Card
                             hoverable
-                            style={{ width: '80%',margin: '0px auto' }}
+                            style={{ width: '280px' }}
                             cover={
                                 <div style={{ height: 204, overflow: 'hidden' }}>
                                 <img

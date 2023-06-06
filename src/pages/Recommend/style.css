@@ -40,3 +40,7 @@
         background-size: cover;
         background-position: center 0;
   }
+
+  .arco-calendar-panel {
+    margin-right: 0 !important;
+}
