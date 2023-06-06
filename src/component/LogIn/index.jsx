@@ -99,7 +99,7 @@ export default function LogIn() {
                           <Space direction='vertical'>
                                 <div style={{textAlign: 'center'}}>
                                     <Space>
-                                    <IconFont type='icon-web_wx' style={{ fontSize: 30, marginRight: 10 }} />
+                                    <IconFont type='icon-web_wx' style={{ fontSize: 30, marginRight: 10 }} onClick={()=>Message.info('微信功能暂未开放')}/>
                                     <IconFont type='icon-dingtalk' style={{ fontSize: 30, marginRight: 10 }} />
                                     <IconFont type='icon-QQ' style={{ fontSize: 30, marginRight: 10 }}/>
                                     </Space>

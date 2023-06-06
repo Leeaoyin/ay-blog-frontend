@@ -16,7 +16,7 @@ import { Input,
         BackTop,
         List
     } from '@arco-design/web-react'
-import { IconDoubleDown,IconArrowRight } from '@arco-design/web-react/icon';
+import { IconDoubleDown,IconArrowRight,IconBook } from '@arco-design/web-react/icon';
 
 import './style.css';
 
@@ -38,10 +38,10 @@ export default function Recommend() {
   }
 
   return (
-        <div style={{ width: '100%'}}>
+        <div style={{ width: '100%'}} className="recommend-content">
             <Divider style={{borderBottomStyle: 'dashed'}} orientation='center'><IconDoubleDown /></Divider>
             
-            <Row  className='grid-demo' gutter={24}>
+            <Row  className='grid-demo' gutter={24} >
                 <Col span={6}>
                     {/* <Affix offsetTop={20}> */}
                         <Space direction='vertical' style={{width: '100%'}}>
@@ -132,13 +132,15 @@ export default function Recommend() {
                                         >
                                         <img alt='avatar' src={require('../../static/my-avatar.jpg')}/>
                                         </Avatar>
-                                        <Typography.Text>联系我~go</Typography.Text>
+                                        <Typography.Text>联系我~</Typography.Text>
                                     </Space>
                                         <span className='icon-hover'>
+                                        
                                             <IconArrowRight
                                             style={{
                                                 cursor: 'pointer',
                                             }}
+                                            onClick={()=>window.location.href='https://github.com/Leeaoyin'}
                                             />
                                         </span>
                                 </Space>
@@ -149,16 +151,16 @@ export default function Recommend() {
                             // extra={<Link>立即查看</Link>}
                         >
                             <List
-                                style={{ width: '100%' }}
+                                style={{ width: '100%',border: 'none' }}
                                 size={'small'}
-                                // header='List title'
+                                header={<Space><IconBook /><span style={{fontSize: '14px'}}>推荐读物</span></Space>}
                                 dataSource={[
                                 
-                                'vue',
+                                'java工程师成神之路',
                                 'test',
                                 'test',
                                 ]}
-                                render={(item, index) => <List.Item key={index}><Link>{item}</Link></List.Item>}
+                                render={(item, index) => <List.Item key={index}><Link href='#' icon>{item}</Link></List.Item>}
                             />
                         </Card>
                     
@@ -171,7 +173,7 @@ export default function Recommend() {
                                 <img
                                     style={{ width: '100%', transform: 'translateY(-20px)' }}
                                     alt='dessert'
-                                    src='//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3ee5f13fb09879ecb5185e440cef6eb9.png~tplv-uwbnlip3yd-webp.webp'
+                                    src='https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*ksNSS7r2V5gAAAAAAAAAAAAADvuFAQ/original'
                                 />
                                 </div>
                             }

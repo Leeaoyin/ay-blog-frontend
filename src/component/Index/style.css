@@ -46,11 +46,11 @@
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: var(--color-neutral-2);
   }
   .layout-basic-demo .arco-layout-header{
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: var(--color-neutral-2);
   }
   
@@ -58,3 +58,21 @@
     overflow-y: auto;
     padding: auto 10px;
   }
+
+
+  .arco-menu-dark {
+    background-color: #07828B !important;
+}
+.arco-menu-item {
+    background-color: #07828B !important;
+    /* color: #3b3e43 !important; */
+    font-weight: bold !important;
+
+}
+.arco-menu-item.arco-menu-disabled {
+    background-color: #07828B !important;
+}
+.arco-menu-item.arco-menu-selected {
+    background-color: #03616C !important;
+
+}
