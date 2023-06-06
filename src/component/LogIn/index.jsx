@@ -21,7 +21,7 @@ import './style.css';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 const Content = Layout.Content;
-const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_lzab193mje9.js'});
+const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_zr4ddg9i7a.js'});
 
 
 export default function LogIn() {

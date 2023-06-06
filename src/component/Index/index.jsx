@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate, Outlet, useLocation  } from 'react-router-dom';
 
-import { Layout, Menu, Avatar,  Space, Divider, Affix, Button,Popover, Typography,Badge } from '@arco-design/web-react';
+import { Layout, Menu, Avatar,  Space, Divider, Icon, Button,Popover, Typography,Badge } from '@arco-design/web-react';
 import { IconArrowRight,IconUser} from '@arco-design/web-react/icon';
 
 import './style.css'
@@ -12,6 +12,7 @@ const Header = Layout.Header;
 const Footer = Layout.Footer;
 const Content = Layout.Content;
 const MenuItem = Menu.Item;
+const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_zr4ddg9i7a.js'});
 
 
 export default function Index() {
