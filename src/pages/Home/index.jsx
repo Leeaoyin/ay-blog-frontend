@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div>
       <Space wrap size={'large'} align='center'>
-        <Banner/>
+        {/* <Banner/> */}
       
       {
         site_info.map((item)=> {

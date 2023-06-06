@@ -53,7 +53,7 @@ export default function Recommend() {
                             />
                             <Calendar
                                 panel
-                                panelWidth={260}
+                                panelWidth={'90%'}
                                 panelTodayBtn
                                 style={{ margin: '0px auto' }}
                                 onChange={(a) => console.log(a)}
@@ -108,7 +108,7 @@ export default function Recommend() {
                     <Affix offsetTop={20}>
                     <Space direction='vertical' style={{width: '100%'}}>
                         
-                        <Card style={{ width: 260,margin: '0px auto' }}
+                        <Card style={{ width: '90%',margin: '0px auto' }}
                             title='热门'
                             extra={<Link>立即查看</Link>}
                         >
@@ -119,7 +119,7 @@ export default function Recommend() {
                         
                         <Card
                             hoverable
-                            style={{ width: 260,margin: '0px auto' }}
+                            style={{ width: '90%',margin: '0px auto' }}
                             cover={
                                 <div style={{ height: 204, overflow: 'hidden' }}>
                                 <img

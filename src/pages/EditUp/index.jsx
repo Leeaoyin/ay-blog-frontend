@@ -88,17 +88,14 @@ export default function EditUp() {
             :
             (
                 <>
-                <Alert content='图片功能正在完善中，暂不支持~' closable />
-                    <div style={{width: '100%',height: '40px'}}>
+                {/* <Alert content='图片功能正在完善中，暂不支持~' closable /> */}
+                    <div style={{width: '100%',height: '40px',lineHeight: '40px',display: 'flex',justifyContent: 'space-between',marginBottom: '10px'}}>
                     
-                        <Space size='large'>
-                            <Input ref={inputRef} allowClear style={{ width: 550 }} status='warning'  onChange={inputTitle} placeholder='请输入标题' maxLength={30} showWordLimit />
-                            <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags} style={{ width: 550 }} status='warning' />
+                        {/* <Space size='large' style={{width: '100%'}}> */}
+                            <Input ref={inputRef} allowClear style={{width: '100%',marginRight: '10px'}}  status='warning'  onChange={inputTitle} placeholder='标题' maxLength={30} showWordLimit />
+                            <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags}  status='warning' />
                             <Button type="text" icon={<IconCheck />} onClick={submitArticle} loading={completeLoading}> 发布 </Button>
-                            {/* <Button type="text" icon={<IconClose />} onClick={clearAllInput}> 清空 </Button> */}
-                            
-                            
-                        </Space>
+                        {/* </Space> */}
                     </div>
                     <div id="vditor"/>
                 </>
