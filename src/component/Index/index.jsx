@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate, Outlet, useLocation  } from 'react-router-dom';
 
-import { Layout, Menu, Avatar,  Space, Divider, Affix, Button,Popover, Typography,BackTop } from '@arco-design/web-react';
+import { Layout, Menu, Avatar,  Space, Divider, Affix, Button,Popover, Typography,Badge } from '@arco-design/web-react';
 import { IconArrowRight,IconUser} from '@arco-design/web-react/icon';
 
 import './style.css'
@@ -60,6 +60,11 @@ export default function Index() {
             ):
             (
               <Space>
+                  <Badge
+                                count={5}
+                                dot
+                                dotStyle={{ width: 5, height: 5 }}
+                            >
                 <Avatar
                   style={{
                     backgroundColor: '#165DFF',
@@ -68,6 +73,7 @@ export default function Index() {
                 >
                   <IconUser />
                 </Avatar>
+                </Badge>
               <Button type='primary' onClick={loginOn}>
                 <span style={{fontSize:'12px'}}>登录/注册</span>
               </Button>

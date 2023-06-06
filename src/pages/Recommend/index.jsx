@@ -12,10 +12,11 @@ import { Input,
         Affix,
         Card,
         Link ,
-        Pagination ,
-        BackTop
+        Typography ,
+        BackTop,
+        List
     } from '@arco-design/web-react'
-// import { IconHeart, IconMessage, IconStar } from '@arco-design/web-react/icon';
+import { IconDoubleDown,IconArrowRight } from '@arco-design/web-react/icon';
 
 import './style.css';
 
@@ -38,19 +39,20 @@ export default function Recommend() {
 
   return (
         <div style={{ width: '100%'}}>
+            <Divider style={{borderBottomStyle: 'dashed'}} orientation='center'><IconDoubleDown /></Divider>
             
             <Row  className='grid-demo' gutter={24}>
                 <Col span={6}>
-                    <Affix offsetTop={20}>
+                    {/* <Affix offsetTop={20}> */}
                         <Space direction='vertical' style={{width: '100%'}}>
-                            <InputSearch
+                            {/* <InputSearch
                                     allowClear={true}
                                     placeholder='请输入搜索内容'
                                     // style={{ width: '260px', margin: '0px auto' }}
                                     // height= {}
                                     searchButton={true}
                                     onSearch={doSearch}
-                            />
+                            /> */}
                             <Calendar
                                 panel
                                 panelWidth={'90%'}
@@ -59,19 +61,20 @@ export default function Recommend() {
                                 onChange={(a) => console.log(a)}
                             />
                         </Space>
-                    </Affix>
+                    {/* </Affix> */}
                 </Col>
                 <Col span={12}>
-                <Space direction='vertical' style={{width: '100%'}}>
-                        {/* <InputSearch
+                    <Space direction='vertical' style={{width: '100%'}}>
+                        
+                        
+                        <InputSearch
                             allowClear={true}
                             placeholder='请输入搜索内容'
-                            style={{ minWidth: '700px',width: '100%', marginBottom: '10px' }}
+                            style={{ width: '100%', marginBottom: '10px' }}
                             // height= {}
                             searchButton={true}
                             onSearch={doSearch}
                         />
-                        <Divider/>  */}
                         {
                             articleList.length!= 0 ? 
                             articleList.map((recommends)=>{
@@ -107,19 +110,62 @@ export default function Recommend() {
                 <Col span={6}>
                     <Affix offsetTop={20}>
                     <Space direction='vertical' style={{width: '100%'}}>
-                        
-                        <Card style={{ width: '90%',margin: '0px auto' }}
-                            title='热门'
-                            extra={<Link>立即查看</Link>}
+
+                    <Card
+                                className='card-with-icon-hover'
+                                hoverable
+                                style={{ width: '80%',margin: '0px auto' }}
+                            >
+                                <Space
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                    }}
+                                    >
+                                    <Space>
+                                        <Avatar
+                                        style={{
+                                            backgroundColor: '#165DFF',
+                                        }}
+                                        size={28}
+                                        >
+                                        <img alt='avatar' src={require('../../static/my-avatar.jpg')}/>
+                                        </Avatar>
+                                        <Typography.Text>联系我~go</Typography.Text>
+                                    </Space>
+                                        <span className='icon-hover'>
+                                            <IconArrowRight
+                                            style={{
+                                                cursor: 'pointer',
+                                            }}
+                                            />
+                                        </span>
+                                </Space>
+                            </Card>
+                    
+                        <Card style={{ width: '80%',margin: '0px auto' }}
+                            // title='热门'
+                            // extra={<Link>立即查看</Link>}
                         >
-                            ByteDance's core product, Toutiao ('Headlines'), is a content platform in China and around
-                            the world. Toutiao started out as a news recommendation engine and gradually evolved into a
-                            platform delivering content in various formats.
+                            <List
+                                style={{ width: '100%' }}
+                                size={'small'}
+                                // header='List title'
+                                dataSource={[
+                                
+                                'vue',
+                                'test',
+                                'test',
+                                ]}
+                                render={(item, index) => <List.Item key={index}><Link>{item}</Link></List.Item>}
+                            />
                         </Card>
+                    
                         
                         <Card
                             hoverable
-                            style={{ width: '90%',margin: '0px auto' }}
+                            style={{ width: '80%',margin: '0px auto' }}
                             cover={
                                 <div style={{ height: 204, overflow: 'hidden' }}>
                                 <img
@@ -134,11 +180,13 @@ export default function Recommend() {
                                 title='关注微信公众号'
                                 description={
                                 <>
-                                    Card content
+                                    
                                 </>
                                 }
                             />
                             </Card>
+
+                            
                     </Space>
                     </Affix>
                 

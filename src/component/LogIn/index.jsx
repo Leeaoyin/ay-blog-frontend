@@ -13,7 +13,7 @@ import { Layout,
         } from '@arco-design/web-react';
 
 import { useNavigate  } from 'react-router-dom';
-// import { IconWechat } from '@arco-design/web-react/icon';
+import { IconUser,IconEmail } from '@arco-design/web-react/icon';
 
 
 
@@ -44,7 +44,7 @@ export default function LogIn() {
       <Layout style={{ height: '100vh' }}>
         <Content>
         <Tabs className='index-module__loginCard--w1Ov0' defaultActiveTab='1' style={{ width: 500, margin:'auto' }}>
-          <TabPane key='1' title='账号' >
+          <TabPane key='1' title={<span><IconUser style={{ marginRight: 6 }}/>账号</span>} >
             
                 <Space size='large'>
                     <Form style={{ width: 350,margin: '0 auto'}} autoComplete='off'>
@@ -58,7 +58,7 @@ export default function LogIn() {
                           <FormItem wrapperCol={{ offset: 8 }}>
                             <Space size={40}>
                             <Button type='primary' onClick={checkLogin} loading={loginLoding}>登录</Button>
-                            <Button type='text' onClick={()=>{Message.info('注册功能完善中~')}}>注册</Button>
+                            <Button type='text' onClick={()=>{Message.info('注册功能暂未开放')}}>注册</Button>
                             </Space>
                           </FormItem>  
                           <FormItem wrapperCol={{ offset: 7 }}>
@@ -79,7 +79,7 @@ export default function LogIn() {
                 </Space>
         
       </TabPane>
-      <TabPane key='2' title='邮箱'>
+      <TabPane key='2' title={<span><IconEmail style={{ marginRight: 6 }}/>邮箱</span>}>
           <Space
               size='large'
             >
@@ -93,7 +93,7 @@ export default function LogIn() {
                             <Input placeholder='验证码' allowClear addAfter={<Button type='text'>发送</Button>}/>
                           </FormItem>
                           <FormItem wrapperCol={{ offset: 2 }}>
-                            <Button type='primary' htmlType='submit' long onClick={()=>{Message.info('邮箱功能完善中~')}}>登录/注册</Button>
+                            <Button type='primary' htmlType='submit' long onClick={()=>{Message.info('邮箱功能暂未开放~')}}>登录/注册</Button>
                           </FormItem>  
                           <FormItem wrapperCol={{ offset: 7 }}>
                           <Space direction='vertical'>
