@@ -13,10 +13,11 @@ import { Input,
         Card,
         Link ,
         Typography ,
-        BackTop,
-        List
+        Carousel ,
+        List,
+        Rate 
     } from '@arco-design/web-react'
-import { IconDoubleDown,IconArrowRight,IconBook } from '@arco-design/web-react/icon';
+import { IconDoubleDown,IconArrowRight,IconBook,IconHeartFill  } from '@arco-design/web-react/icon';
 
 import './style.css';
 
@@ -27,6 +28,12 @@ const InputSearch = Input.Search;
 const Row = Grid.Row;
 const Col = Grid.Col;
 const { Meta } = Card;
+const imageSrc = [
+    '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/cd7a1aaea8e1c5e3d26fe2591e561798.png~tplv-uwbnlip3yd-webp.webp',
+    '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/6480dbc69be1b5de95010289787d64f1.png~tplv-uwbnlip3yd-webp.webp',
+    '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/0265a04fddbd77a19602a15d9d55d797.png~tplv-uwbnlip3yd-webp.webp',
+    '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/24e0dd27418d2291b65db1b21aa62254.png~tplv-uwbnlip3yd-webp.webp',
+  ];
 
 
 export default function Recommend() {
@@ -45,6 +52,16 @@ export default function Recommend() {
                 <Col span={6}>
                     {/* <Affix offsetTop={20}> */}
                         <Space direction='vertical' style={{width: '100%'}}>
+                        <Carousel autoPlay={true} showArrow='hover' style={{ width: 280 }}>
+                                {imageSrc.map((src, index) => (
+                                    <div key={index}>
+                                    <img
+                                        src={src}
+                                        style={{ width: '100%' }}
+                                    />
+                                    </div>
+                                ))}
+                            </Carousel>
                             <Calendar
                                 panel
                                 panelWidth={'280px'}
@@ -52,6 +69,7 @@ export default function Recommend() {
                                 style={{ margin: '0px auto' }}
                                 onChange={(a) => console.log(a)}
                             />
+                            
                         </Space>
                     {/* </Affix> */}
                 </Col>
