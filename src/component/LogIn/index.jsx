@@ -43,7 +43,7 @@ export default function LogIn() {
     <div className='layout-basic-login' style={{minWidth: '800px'}}>
       <Layout style={{ height: '100vh' }}>
         <Content>
-        <Tabs className='index-module__loginCard--w1Ov0' defaultActiveTab='1' style={{ width: 500, margin:'auto' }}>
+        <Tabs type="rounded" className='index-module__loginCard--w1Ov0' defaultActiveTab='1' style={{ width: 500, margin:'auto' }}>
           <TabPane key='1' title={<span><IconUser style={{ marginRight: 6 }}/>账号</span>} >
             
                 <Space size='large'>
