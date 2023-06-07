@@ -4,6 +4,8 @@ import MyShare from "../pages/MyShare";
 import Recommend from "../pages/Recommend";
 import LogIn from "../component/LogIn";
 import Index from "../component/Index";
+import EditUp from "../pages/EditUp";
+
 
 
 export const routers = [
@@ -32,8 +34,8 @@ export const routers = [
                 element: <Recommend/>
             },
             {
-                path: 'login',
-                element: <LogIn/>
+                path: 'edit',
+                element: <EditUp/>
             }
         ]
     }

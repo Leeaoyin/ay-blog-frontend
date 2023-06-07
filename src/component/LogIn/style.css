@@ -3,7 +3,7 @@
 .layout-basic-login .arco-layout-sider,
 .layout-basic-login .arco-layout-sider-children {
   /* color: var(--color-white); */
-  background-color: var(--color-neutral-2);
+  /* background-color: var(--color-neutral-2); */
   text-align: center;
   font-stretch: condensed;
   display: flex;
@@ -21,7 +21,7 @@
 
 .layout-basic-login {
     margin: auto 250px;
-    background-image: url(https://assets.codehub.cn/micro-frontend/login/f7eeecbeccefe963298c23b54741d473.png);  
+    background-image:url(https://assets.codehub.cn/micro-frontend/login/f7eeecbeccefe963298c23b54741d473.png);  
     background-color: var(--color-neutral-2);
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,8 +31,7 @@
 }
 
 
-element.style {
-}
+
 .index-module__login--isG0A .index-module__layoutSpin--pr7cP .index-module__cardHasTab--Uzr9R {
     display: flex;
     flex-direction: column;

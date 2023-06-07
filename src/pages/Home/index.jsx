@@ -49,8 +49,8 @@ export default function Home() {
     
   return (
     <div>
-      <Space wrap size={'large'} align='center'>
-        <Banner/>
+      <Space wrap size={'large'} align='center' style={{margin: 'auto 100px'}}>
+        {/* <Banner/> */}
       
       {
         site_info.map((item)=> {
@@ -133,7 +133,6 @@ export default function Home() {
               <IconAt />
               <span>添加站点</span>
               </>
-
             }
             visible={visible}
             onOk={onOk}

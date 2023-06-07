@@ -8,7 +8,7 @@ export default function MyShare() {
         style={{marginTop: '100px'}}
         imgSrc={require('../../static/pageImg/no_share.png')}
         description={
-          <span>暂时无内容哦~~</span>
+          <span>正在快马加鞭的赶来~~</span>
         }
       />
     </div>

@@ -3,19 +3,17 @@
 .layout-basic-demo .arco-layout-sider,
 .layout-basic-demo .arco-layout-sider-children {
   /* color: var(--color-white); */
-  background-color: var(--color-neutral-2);
+  background-color: #f7f7f7;
   text-align: center;
-  min-width: 800px;
+
   font-stretch: condensed;
   display: flex;
   justify-content: center;
 }
 
 .layout-basic-demo .arco-layout-content {
-  /* color: var(--color-white); */
-  background-color: var(--color-neutral-2);
-  font-stretch: condensed;
-  min-width: 800px;
+  background-color: #f7f7f7;
+
   display: flex;
   justify-content: center;
 }
@@ -25,7 +23,8 @@
 
 .arco-layout-content {
   /* background-color: white !important; */
-    min-height: 90vh;
+    height: auto;
+    /* display: flex; */
 }
 
 
@@ -34,7 +33,8 @@
 .layout-basic-demo .arco-layout-footer {
   height:40px;
   line-height: 40px;
-  background-color: rgb(var(--arcoblue-1));
+  background-color: #3b3e43;
+  color: #7d8186;
 }
 
 
@@ -44,11 +44,11 @@
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: var(--color-neutral-2);
   }
   .layout-basic-demo .arco-layout-header{
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: var(--color-neutral-2);
   }
   
@@ -56,3 +56,21 @@
     overflow-y: auto;
     padding: auto 10px;
   }
+
+
+  .arco-menu-dark {
+    background-color: #07828B !important;
+}
+.arco-menu-item {
+    background-color: #07828B !important;
+    /* color: #3b3e43 !important; */
+    font-weight: bold !important;
+
+}
+.arco-menu-item.arco-menu-disabled {
+    background-color: #07828B !important;
+}
+.arco-menu-item.arco-menu-selected {
+    background-color: #03616C !important;
+
+}

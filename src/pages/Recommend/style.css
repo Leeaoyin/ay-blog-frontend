@@ -12,3 +12,35 @@
   .list-demo-action-layout .arco-list-item-action .arco-icon {
     margin: 0 4px;
   }
+
+  /* .grid-demo .arco-col {
+    height: 48px;
+    line-height: 48px; 
+    color: var(--color-white);
+    text-align: center;
+  } */
+  
+  /* .grid-demo .arco-col:nth-child(2n + 1) {
+    background-color: var(--color-primary-light-4);
+    border: 1px solid black;
+  } */
+  
+  /* .grid-demo .arco-col:nth-child(2n) { */
+    /* border: 1px solid blue; */
+    /* text-align: center; */
+    /* padding-top: 50px; */
+
+    /* margin: 10px auto; */
+    /* background-color: rgba(var(--arcoblue-6), 0.9); */
+  /* } */
+  /* https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*ksNSS7r2V5gAAAAAAAAAAAAADvuFAQ/original */
+  .recommend-content {
+        background-image: url(https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*ksNSS7r2V5gAAAAAAAAAAAAADvuFAQ/original);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center 0;
+  }
+
+  .arco-card.arco-card-size-default.arco-card-bordered.arco-card-hoverable:hover {
+    box-shadow: 4px 4px 4px 0px rgba(1, 1, 1,.1);
+}
