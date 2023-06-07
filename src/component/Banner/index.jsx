@@ -1,28 +1,38 @@
 import React,{useState} from 'react'
 import { Carousel } from '@arco-design/web-react';
+
+
 const imageSrc = [
   'http://static.leeay.cn/banner/welcome.png',
   'http://static.leeay.cn/banner/black.png',
   'http://static.leeay.cn/banner/self-driver.png'
 ];
+const image_online = [
+    
+]
 
 export default function Banner() {
   return (
-    <div>
+    <div style={{ width: '100%'}}>
 
             <Carousel
                 autoPlay
                 indicatorType={'slider'}
                 indicatorPosition={'bottom'}
                 showArrow='never'
-                style={{ width: '100%',marginLeft: '10px'}}
+                style={{}}
+                
             >
-                {imageSrc.map((src, index) => (
-                <div key={index}>
-                    <img alt='' src={src} style={{ width: '100%'}}
+                
+                <div>
+                    <img alt='' src={require('../../static/banner/world_Banner.png')} style={{ width: '100%',height: 200}}
                     />
                 </div>
-                ))}
+                <div>
+                    <img alt='' src={require('../../static/banner/zhixing_Banner.png')} style={{ width: '100%',height: 200}}
+                    />
+                </div>
+                
             </Carousel>
       
     </div>

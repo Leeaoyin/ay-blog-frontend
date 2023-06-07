@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate, Outlet, useLocation  } from 'react-router-dom';
 
-import { Layout, Menu, Avatar,  Space, Divider, Icon, Button,Popover, Typography,Badge } from '@arco-design/web-react';
+import { Layout, Menu, Avatar,  Space, Icon, Button,Popover, Typography,Badge,BackTop } from '@arco-design/web-react';
 import { IconArrowRight,IconUser} from '@arco-design/web-react/icon';
 
 import './style.css'
@@ -40,6 +40,7 @@ export default function Index() {
           margin: 'auto 30px'
         }}
       >
+          
         
           {
             islogin ? (
@@ -61,11 +62,7 @@ export default function Index() {
             ):
             (
               <Space>
-                  <Badge
-                                count={5}
-                                dot
-                                dotStyle={{ width: 5, height: 5 }}
-                            >
+                  <Badge count={5} dot dotStyle={{ width: 5, height: 5 }} >
                 <Avatar
                   style={{
                     backgroundColor: '#165DFF',
@@ -87,13 +84,14 @@ export default function Index() {
   };
 
   return (
-    <div className='layout-basic-demo' >
+    <div className='layout-basic-demo'>
+        <BackTop visibleHeight={30} style={{marginBottom:'40px'}}/>
         
         
       <Layout style={{ minHeight: '400px' }}>
           
           <div className='head-root'>
-          <Header style={{width: '100%'}} id="head-up">
+          <Header id='index-header' style={{width: '100%'}} id="head-up">
             
             <div className='menu-demo'>
               <Menu mode='horizontal'  defaultSelectedKeys={['/index/home']} selectedKeys={location.pathname} width={50} theme='dark' style={{borderRadius: '10px'}}>
@@ -133,8 +131,11 @@ export default function Index() {
          
           
           <Content style={{paddingTop: '10px'}}>
+          
               <Outlet />
+              
           </Content>
+          
           <Footer>
             <Foot/>
           </Footer>

@@ -136,7 +136,7 @@ export default function Recommend() {
                                         >
                                         <img alt='avatar' src={require('../../static/my-avatar.jpg')}/>
                                         </Avatar>
-                                        <Typography.Text>联系我~</Typography.Text>
+                                        <Typography.Text>有好的建议？联系我~</Typography.Text>
                                     </Space>
                                         <span className='icon-hover'>
                                         

@@ -92,7 +92,7 @@ export default function EditUp() {
                     <div style={{width: '100%',height: '40px',lineHeight: '40px',display: 'flex',justifyContent: 'space-between',marginBottom: '10px'}}>
                     
                         {/* <Space size='large' style={{width: '100%'}}> */}
-                            <Input ref={inputRef} allowClear style={{width: '100%',marginRight: '10px'}}  status='warning'  onChange={inputTitle} placeholder='标题' maxLength={30} showWordLimit />
+                            <Input ref={inputRef} allowClear style={{width: '100%',marginRight: '10px'}}  status='warning'  onChange={inputTitle} placeholder='标题' maxLength={20} showWordLimit />
                             <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags}  status='warning' />
                             <Button type="text" icon={<IconCheck />} onClick={submitArticle} loading={completeLoading}> 发布 </Button>
                         {/* </Space> */}

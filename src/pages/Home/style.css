@@ -3,28 +3,39 @@
 }
 
 .card-custom-hover-style {
-    margin-left: 12px;
+    /* margin-left: 12px; */
     transition-property: all;
   }
   
   .card-custom-hover-style:hover {
-    transform: translateY(-4px);
+    /* transform: translateY(-4px); */
     transition: all 0.1s;
+    box-shadow: 4px 4px 4px 0px rgba(1, 1, 1,.1);
     
   }
 
-  .card-with-icon-hover .icon-hover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    transition: all 0.1s;
-  }
+ 
   
   .card-with-icon-hover .icon-hover:hover {
-    background-color: rgb(var(--gray-2));
+    box-shadow: 4px 4px 4px 0px rgba(1, 1, 1,.1);
   }
 
+ .dashboard-img {
+    /* border: 1px solid #911717; */
+    height: 100vh;
+    width: 100%;
+}
+
+/* <img
+                        style={{ width: '100%', transform: 'translateY(-20px)' }}
+                        alt='dessert'
+                        src='https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*ksNSS7r2V5gAAAAAAAAAAAAADvuFAQ/original'
+                        /> */
+
+.sider-right {
+    background-image: url('https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*ksNSS7r2V5gAAAAAAAAAAAAADvuFAQ/original');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0;
+}
   
