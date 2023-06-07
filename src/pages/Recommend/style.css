@@ -25,14 +25,14 @@
     border: 1px solid black;
   } */
   
-  .grid-demo .arco-col:nth-child(2n) {
+  /* .grid-demo .arco-col:nth-child(2n) { */
     /* border: 1px solid blue; */
     /* text-align: center; */
     /* padding-top: 50px; */
 
     /* margin: 10px auto; */
     /* background-color: rgba(var(--arcoblue-6), 0.9); */
-  }
+  /* } */
   /* https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*ksNSS7r2V5gAAAAAAAAAAAAADvuFAQ/original */
   .recommend-content {
         background-image: url(https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*ksNSS7r2V5gAAAAAAAAAAAAADvuFAQ/original);

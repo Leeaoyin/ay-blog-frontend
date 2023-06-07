@@ -21,7 +21,7 @@ import './style.css';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 const Content = Layout.Content;
-const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_zr4ddg9i7a.js'});
+const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_tu7ydspe7w8.js'});
 
 
 export default function LogIn() {
@@ -31,7 +31,6 @@ export default function LogIn() {
   const checkLogin = ()=>{
     setLoginLoding(!loginLoding);
     setTimeout(()=>{
-    //   Message.success('登陆成功');
       setLoginLoding(!loginLoding);
       navigate('/index/home');
       
