@@ -22,6 +22,7 @@ import { IconDoubleDown,IconArrowRight,IconBook,IconHeartFill  } from '@arco-des
 import './style.css';
 
 import RecomContent from './RecomContent';
+import RateForContent from '../../component/RateForContent';
 import {recommend_info} from '../../static/fake';
 
 const InputSearch = Input.Search;
@@ -190,6 +191,8 @@ export default function Recommend() {
                                 }
                             />
                             </Card>
+
+                            {/* <RateForContent widths={'280px'}/> */}
 
                             
                     </Space>
