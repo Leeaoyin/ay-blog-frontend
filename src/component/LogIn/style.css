@@ -80,6 +80,15 @@
 }
 
 
+.login-img {
+    display: flex;
+    width: 230px;
+    top: 208px;
+    margin: 0 auto;
+    justify-content: center;
+    pointer-events: none;
+}
+
 
 
 

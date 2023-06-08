@@ -70,6 +70,32 @@ export default function Recommend() {
                                 style={{ margin: '0px auto' }}
                                 onChange={(a) => console.log(a)}
                             />
+                            <Card style={{ width: '280px' }} hoverable>
+                                <List
+                                    style={{ width: '100%',border: 'none' }}
+                                    size={'small'}
+                                    header={<Space><IconBook /><span style={{fontSize: '14px'}}>推荐读物</span></Space>}
+                                    dataSource={[
+                                    {
+                                        name: 'java工程师成神之路',
+                                        url: 'https://hollischuang.github.io/toBeTopJavaer/#/menu'
+                                    },
+                                    {
+                                        name: 'java工程师成神之路',
+                                        url: 'https://hollischuang.github.io/toBeTopJavaer/#/menu'
+                                    },
+                                    {
+                                        name: 'java工程师成神之路',
+                                        url: 'https://hollischuang.github.io/toBeTopJavaer/#/menu'
+                                    },
+                                    {
+                                        name: 'java工程师成神之路',
+                                        url: 'https://hollischuang.github.io/toBeTopJavaer/#/menu'
+                                    }
+                                    ]}
+                                    render={(item, index) => <List.Item key={index}><Link onClick={()=>window.open(item.url)} icon>{item.name}</Link></List.Item>}
+                                />
+                            </Card>
                             
                         </Space>
                     {/* </Affix> */}
@@ -77,32 +103,35 @@ export default function Recommend() {
                 <Col span={12}>
                     <Space direction='vertical' style={{width: '100%'}}>
                         
-                        
-                        <InputSearch
-                            allowClear={true}
-                            placeholder='请输入搜索内容'
-                            style={{ width: '600px', marginBottom: '10px' }}
-                            // height= {}
-                            searchButton={true}
-                            onSearch={doSearch}
-                        />
                         {
                             articleList.length!= 0 ? 
-                            articleList.map((recommends)=>{
-                                return (
-                                    <>
-                                    <RecomContent
-                                        key={recommends.id} 
-                                        title={recommends.article_info.title} 
-                                        time={recommends.article_info.time} 
-                                        id={recommends.article_info.id} 
-                                        tags={recommends.article_info.tags}
-                                        content={recommends.article_info.content}
-                                        author={recommends.author.name}
-                                    />
-                                    </>
-                                )
-                            }) 
+                            (
+                                <>
+                                {
+                                    articleList.map((recommends)=>{
+                                        return (
+                                            <>
+                                            <RecomContent
+                                                key={recommends.id} 
+                                                title={recommends.article_info.title} 
+                                                time={recommends.article_info.time} 
+                                                id={recommends.article_info.id} 
+                                                tags={recommends.article_info.tags}
+                                                content={recommends.article_info.content}
+                                                author={recommends.author.name}
+                                            />
+                                            </>
+                                        )
+                                    })
+                                }
+                            
+                            <Card style={{ width: '600px' }} hoverable onClick={()=>Message.success('hi~hi~')}>
+                                <Space style={{margin: '0px auto'}}>
+                                    <Link>查看更多。。。</Link>
+                                </Space>
+                            </Card>
+                            </>
+                            )
 
                             
                             :
@@ -120,6 +149,14 @@ export default function Recommend() {
                 <Col span={6}>
                     <Affix offsetTop={20}>
                     <Space direction='vertical' >
+                    <InputSearch
+                            allowClear={true}
+                            placeholder='请输入搜索内容'
+                            style={{ width: '280px', marginBottom: '10px' }}
+                            // height= {}
+                            searchButton={true}
+                            onSearch={doSearch}
+                        />
 
                             <Card
                                 // className='card-with-icon-hover'
@@ -150,25 +187,6 @@ export default function Recommend() {
                                 </Space>
                             </Card>
                     
-                        <Card style={{ width: '280px' }} hoverable
-                            // title='热门'
-                            // extra={<Link>立即查看</Link>}
-                        >
-                            <List
-                                style={{ width: '100%',border: 'none' }}
-                                size={'small'}
-                                header={<Space><IconBook /><span style={{fontSize: '14px'}}>推荐读物</span></Space>}
-                                dataSource={[
-                                
-                                'java工程师成神之路',
-                                '代码大全',
-                                '时间管理大师',
-                                ]}
-                                render={(item, index) => <List.Item key={index}><Link href='#' icon>{item}</Link></List.Item>}
-                            />
-                        </Card>
-                    
-                        
                         <Card
                             hoverable
                             style={{ width: '280px' }}
