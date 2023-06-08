@@ -149,10 +149,10 @@ export default function Home() {
                             style: { flexBasis: 'calc(100% - 90px)' },
                         }}
                         >
-                        <FormItem label='名称' field='name' rules={[{ required: true }]}>
+                        <FormItem label='名称' field='name' rules={[{ required: true,message: '名称不能为空' }]}>
                         <Input placeholder='' />
                         </FormItem>
-                        <FormItem label='地址' field='address' rules={[{ required: true }]}>
+                        <FormItem label='地址' field='address' rules={[{ required: true,message: '地址不能为空' }]}>
                         <Input placeholder='' />
                         </FormItem>
                         </Form>

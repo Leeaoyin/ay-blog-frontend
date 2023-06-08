@@ -1,8 +1,8 @@
 import { useRoutes } from 'react-router-dom';
 import './App.css';
 
-import "@arco-design/web-react/dist/css/arco.css";
-
+// import "@arco-design/web-react/dist/css/arco.css";
+import '@arco-themes/react-jksh/css/arco.css';
 import { routers } from './routers';
 
 

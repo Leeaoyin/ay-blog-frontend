@@ -19,7 +19,7 @@
 }
 /* https://assets.codehub.cn/micro-frontend/login/f7eeecbeccefe963298c23b54741d473.png */
 
-.layout-basic-login {
+/* .layout-basic-login {
     margin: auto 250px;
     background-image:url(https://assets.codehub.cn/micro-frontend/login/f7eeecbeccefe963298c23b54741d473.png);  
     background-color: var(--color-neutral-2);
@@ -28,7 +28,7 @@
     background-position: center 0;
 
     
-}
+} */
 
 
 
@@ -41,7 +41,7 @@
 .index-module__loginCard--w1Ov0 {
     background: #fff;
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+    box-shadow: 0 4px 8px -4px rgba(0,0,0,.13), 0 6px 16px 0 rgba(0,0,0,.08), 0 12px 24px 16px rgba(0,0,0,.04);
     box-sizing: border-box;
     min-height: 100px;
     padding: 48px 48px 32px;
