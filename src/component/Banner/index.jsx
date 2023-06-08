@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Carousel } from '@arco-design/web-react';
+import { Carousel,Image } from '@arco-design/web-react';
 
 
 const imageSrc = [
@@ -17,19 +17,19 @@ export default function Banner() {
 
             <Carousel
                 autoPlay
-                indicatorType={'slider'}
+                indicatorType={'line'}
                 indicatorPosition={'bottom'}
-                showArrow='never'
+                showArrow='hover'
                 style={{}}
                 
             >
                 
                 <div>
-                    <img alt='' src={require('../../static/banner/world_Banner.png')} style={{ width: '100%',height: 200}}
+                    <Image alt='' src={require('../../static/banner/world_Banner.png')} width={'100%'} 
                     />
                 </div>
                 <div>
-                    <img alt='' src={require('../../static/banner/zhixing_Banner.png')} style={{ width: '100%',height: 200}}
+                    <Image alt='' src={require('../../static/banner/zhixing_Banner.png')} width={'100%'}
                     />
                 </div>
                 
