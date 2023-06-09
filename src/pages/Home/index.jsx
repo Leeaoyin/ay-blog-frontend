@@ -55,7 +55,7 @@ export default function Home() {
         
         {/* <div style={{width: '1100px'}}></div> */}
         {/* <Banner/> */}
-        <Row className='grid-gutter-demo' gutter={24} style={{width:'1200px' ,marginTop: '10px'}}>
+        <Row className='grid-gutter-demo' gutter={24} style={{width:'1200px'}}>
             
             <Col span={5}>
             <Divider orientation={'center'}><span style={{color: '#7d8186'}}>常用站点</span></Divider>

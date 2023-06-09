@@ -15,7 +15,8 @@ import { Input,
         Typography ,
         Carousel ,
         List,
-        Rate 
+        Rate,
+        Tag
     } from '@arco-design/web-react'
 import { IconDoubleDown,IconArrowRight,IconBook,IconHeartFill  } from '@arco-design/web-react/icon';
 
@@ -34,6 +35,21 @@ const imageSrc = [
     '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/6480dbc69be1b5de95010289787d64f1.png~tplv-uwbnlip3yd-webp.webp',
     '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/0265a04fddbd77a19602a15d9d55d797.png~tplv-uwbnlip3yd-webp.webp',
     '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/24e0dd27418d2291b65db1b21aa62254.png~tplv-uwbnlip3yd-webp.webp',
+  ];
+
+  const COLORS = [
+
+    'green',
+    'orange',
+    'gold',
+    'lime',
+    'cyan',
+    'blue',
+    'arcoblue',
+    'purple',
+    'pinkpurple',
+    'magenta',
+    'gray',
   ];
 
 
@@ -56,10 +72,7 @@ export default function Recommend() {
                         <Carousel autoPlay={true} showArrow='hover' style={{ width: 280 }}>
                                 {imageSrc.map((src, index) => (
                                     <div key={index}>
-                                    <img
-                                        src={src}
-                                        style={{ width: '100%' }}
-                                    />
+                                    <img src={src} style={{ width: '100%' }}/>
                                     </div>
                                 ))}
                             </Carousel>
@@ -188,6 +201,26 @@ export default function Recommend() {
                             </Card>
                     
                         <Card
+                            hoverable
+                            style={{ width: '280px' }}
+                            cover={
+                                <div style={{ width: '280px',height: '204px',margin: '10px 20px '}} className='recommend-classes'>
+                                    <Space size={'medium'} wrap>
+                                    {COLORS.map((color, i) => (
+                                        <Tag key={i} color={color} style={{margin: 'auto'}}>
+                                        ada{i}
+                                        </Tag>
+                                    ))}
+                                    </Space>
+                                </div>
+                            }
+                            >
+                            <Meta
+                                title='热门分类'
+                            />
+                            </Card>
+
+                            <Card
                             hoverable
                             style={{ width: '280px' }}
                             cover={

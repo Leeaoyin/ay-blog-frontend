@@ -1,16 +1,67 @@
 import React from 'react'
-import { Empty } from '@arco-design/web-react';
+import { Empty,Space,Message,Card,Link } from '@arco-design/web-react';
+
+import RecomContent from '../Recommend/RecomContent';
+import {recommend_info} from '../../static/fake';
 
 export default function MyShare() {
+
+    const [articleList, setArticleList] = React.useState(recommend_info);
+
   return (
     <div>
-      <Empty
+      {/* <Empty
         style={{marginTop: '100px'}}
         imgSrc={require('../../static/pageImg/no_share.png')}
         description={
           <span>正在快马加鞭的赶来~~</span>
         }
-      />
+      /> */}
+
+<Space direction='vertical' style={{width: '100%'}}>
+                        
+                        {
+                            articleList.length!= 0 ? 
+                            (
+                                <>
+                                {
+                                    articleList.map((recommends)=>{
+                                        return (
+                                            <>
+                                            <RecomContent
+                                                key={recommends.id} 
+                                                title={recommends.article_info.title} 
+                                                time={recommends.article_info.time} 
+                                                id={recommends.article_info.id} 
+                                                tags={recommends.article_info.tags}
+                                                content={recommends.article_info.content}
+                                                author={recommends.author.name}
+                                            />
+                                            </>
+                                        )
+                                    })
+                                }
+                            
+                            <Card style={{ width: '600px' }} hoverable onClick={()=>Message.success('hi~hi~')}>
+                                <Space style={{margin: '0px auto'}}>
+                                    <Link>查看更多。。。</Link>
+                                </Space>
+                            </Card>
+                            </>
+                            )
+
+                            
+                            :
+
+                                (
+                                    <Empty
+                                            style={{marginTop: '100px'}}
+                                            imgSrc={require('../../static/pageImg/no_recommend.png')}
+                                            description={<span>暂时无内容哦~~</span>}
+                                    />
+                                )
+                        }
+                    </Space>
     </div>
   )
 }

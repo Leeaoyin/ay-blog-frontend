@@ -13,7 +13,7 @@ import { Layout,
         } from '@arco-design/web-react';
 
 import { useNavigate  } from 'react-router-dom';
-import { IconUser,IconEmail } from '@arco-design/web-react/icon';
+import { IconUser,IconEmail,IconPlus,IconCheck } from '@arco-design/web-react/icon';
 
 
 
@@ -30,18 +30,10 @@ export default function LogIn() {
   const [form] = Form.useForm();
 
   const checkLogin = ()=>{
-    form.validate().then((res) => {
         setLoginLoding(!loginLoding);
         setTimeout(() => {
-          Message.success(JSON.stringify(res));
-          setLoginLoding(!loginLoding);
           navigate('/index/home');
         }, 1500);
-      }).catch((error)=>{
-        console.log('====================================');
-        console.log(error);
-        console.log('====================================');
-      });
 
   }
 
@@ -50,13 +42,11 @@ export default function LogIn() {
       <Layout style={{ height: '100vh' }}>
         <Content>
             <Space direction='vertical' style={{width: 400, margin:'auto'}}>
-                <div className="login-img">
-                {/* <img src="https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*IVdnTJqUp6gAAAAAAAAAAAAADvuFAQ/original" alt="语雀" class="theme-image index-module_logo_iT2c+" style={{height: '62px'}}/> */}
-                </div>
+                {/* <div className="login-img">
+                <img src="https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*IVdnTJqUp6gAAAAAAAAAAAAADvuFAQ/original" alt="语雀" class="theme-image index-module_logo_iT2c+" style={{height: '62px'}}/>
+                </div> */}
             <Tabs type="rounded" className='index-module__loginCard--w1Ov0' defaultActiveTab='1' style={{ width: 400, margin:'auto' }}>
-                    <TabPane key='1' title={<span><IconUser style={{ marginRight: 6 }}/>账号</span>} >
-                        
-                            <Space size='large'>
+                    <TabPane key='1' title={<span><IconUser style={{ marginRight: 6 }}/>账号</span>}>
                                 <Form form={form} style={{ width: 350,margin: '0 auto'}} autoComplete='off' onSubmit={checkLogin}>
                                     <Space direction='vertical'>
                                     <FormItem label='' rules={[{ required: true,message: '账号不能为空' }]}>
@@ -66,12 +56,12 @@ export default function LogIn() {
                                         <Input.Password placeholder='密码' allowClear />
                                     </FormItem>
                                     <FormItem wrapperCol={{ offset: 4 }}>
-                                        <Space size={40}>
-                                        <Button type='primary' htmlType='submit' onClick={checkLogin} loading={loginLoding}>登录</Button>
+                                        <Space size={10}>
+                                        <Button type='primary' htmlType='submit' Submit={checkLogin} loading={loginLoding}  icon={<IconCheck />}>登录</Button>
                                         <Button type='text' onClick={()=>{Message.info('注册功能暂未开放')}}>注册</Button>
                                         </Space>
                                     </FormItem>  
-                                    <FormItem wrapperCol={{ offset: 4 }}>
+                                    <FormItem wrapperCol={{ offset: 3 }}>
                                         <Space direction='vertical'>
                                             
                                             <div style={{textAlign: 'center'}}>
@@ -86,7 +76,7 @@ export default function LogIn() {
                                     </FormItem>
                                     </Space>
                                 </Form>
-                            </Space>
+                            
                     
                 </TabPane>
                 <TabPane key='2' title={<span><IconEmail style={{ marginRight: 6 }}/>邮箱</span>}>

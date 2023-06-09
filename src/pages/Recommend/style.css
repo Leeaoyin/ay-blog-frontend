@@ -44,3 +44,10 @@
   .arco-card.arco-card-size-default.arco-card-bordered.arco-card-hoverable:hover {
     box-shadow: 4px 4px 4px 0px rgba(1, 1, 1,.1);
 }
+
+.recommend-classes {
+    background-image: url('https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*ksNSS7r2V5gAAAAAAAAAAAAADvuFAQ/original');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0;
+}
