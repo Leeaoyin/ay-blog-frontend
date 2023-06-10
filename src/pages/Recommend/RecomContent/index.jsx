@@ -48,7 +48,7 @@ export default function RecomContent(props) {
     <>
 
         <Card
-            style={{width: '600px',margin: '0px auto',marginBottom:10 }}
+            style={{width: props.width,margin: '0px auto',marginBottom:10 }}
             className='card-hover-style'
             title={
                     <Space>

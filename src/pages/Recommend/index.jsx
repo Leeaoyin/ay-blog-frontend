@@ -16,14 +16,14 @@ import { Input,
         Carousel ,
         List,
         Rate,
-        Tag
+        Tag,
+        Select
     } from '@arco-design/web-react'
-import { IconDoubleDown,IconArrowRight,IconBook,IconHeartFill  } from '@arco-design/web-react/icon';
+import { IconDoubleDown,IconArrowRight,IconBook  } from '@arco-design/web-react/icon';
 
 import './style.css';
 
 import RecomContent from './RecomContent';
-import RateForContent from '../../component/RateForContent';
 import {recommend_info} from '../../static/fake';
 
 const InputSearch = Input.Search;
@@ -125,6 +125,7 @@ export default function Recommend() {
                                         return (
                                             <>
                                             <RecomContent
+                                                width={'600px'}
                                                 key={recommends.id} 
                                                 title={recommends.article_info.title} 
                                                 time={recommends.article_info.time} 
@@ -162,14 +163,18 @@ export default function Recommend() {
                 <Col span={6}>
                     <Affix offsetTop={20}>
                     <Space direction='vertical' >
-                    <InputSearch
-                            allowClear={true}
-                            placeholder='请输入搜索内容'
-                            style={{ width: '280px', marginBottom: '10px' }}
-                            // height= {}
-                            searchButton={true}
-                            onSearch={doSearch}
-                        />
+                    {/* style={{ width: '280px'}} */}
+                        <div style={{ width: '280px'}}>
+                        <Input.Group compact>
+                            <Select defaultValue='标题' style={{ width: '25%' }}>
+                            <Select.Option value='标签'>标签</Select.Option>
+                            <Select.Option value='标题'>标题</Select.Option>
+                            </Select>
+                            <InputSearch placeholder='请输入搜索内容' allowClear={true} style={{ width: '75%',marginBottom: '10px' }}  searchButton={true} onSearch={doSearch}/>
+                        </Input.Group>
+                        {/* <InputSearch allowClear={true} placeholder='请输入搜索内容' style={{ marginBottom: '10px' }} searchButton={true} onSearch={doSearch} /> */}
+                        </div>
+                    
 
                             <Card
                                 // className='card-with-icon-hover'
@@ -204,7 +209,7 @@ export default function Recommend() {
                             hoverable
                             style={{ width: '280px' }}
                             cover={
-                                <div style={{ width: '280px',height: '204px',margin: '10px 20px '}} className='recommend-classes'>
+                                <div style={{ width: '280px',margin: '10px 20px '}} className='recommend-classes'>
                                     <Space size={'medium'} wrap>
                                     {COLORS.map((color, i) => (
                                         <Tag key={i} color={color} style={{margin: 'auto'}}>
@@ -242,8 +247,6 @@ export default function Recommend() {
                                 }
                             />
                             </Card>
-
-                            {/* <RateForContent widths={'280px'}/> */}
 
                             
                     </Space>

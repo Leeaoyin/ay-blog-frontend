@@ -73,7 +73,7 @@ export default function Index() {
                 </Avatar>
                 </Badge>
               <Button type='primary' shape='round' onClick={loginOn}>
-                <span style={{fontSize:'12px'}}>登录/注册</span>
+                <span style={{fontSize:'12px'}}>登录</span>
               </Button>
               </Space>
             )
