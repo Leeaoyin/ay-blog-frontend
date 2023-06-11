@@ -3,10 +3,12 @@ import { Button,
         Space,
         Input,
         Result,
-        Alert,
-        InputTag  } from '@arco-design/web-react';
+        Form,
+        InputTag,
+        Grid,
+        Divider  } from '@arco-design/web-react';
         
-import { IconCheck,IconClose } from '@arco-design/web-react/icon';
+import { IconCheck,IconUndo } from '@arco-design/web-react/icon';
         
 import { useNavigate  } from 'react-router-dom';
         
@@ -23,6 +25,12 @@ export default function EditUp() {
     const [completeLoading, setCompleteLoading] = React.useState(false);
     const [articleInfo, setArticleInfo] = React.useState({});  //object for submit article api
     const inputRef = React.useRef();
+    // form obj
+    const FormItem = Form.Item;
+    const [form] = Form.useForm();
+    // Grid obj
+    const Row = Grid.Row;
+    const Col = Grid.Col;
 
 
     const navigate=useNavigate()
@@ -37,7 +45,7 @@ export default function EditUp() {
             "type": "text",
             "max": 800
           },
-        height: '90%',
+        height: '600px',
         mode: 'sv'
 
       });
@@ -70,7 +78,9 @@ export default function EditUp() {
 
 
   return (
-    <div style={{width: '100%'}}>
+    <div>
+        <Row className='grid-gutter-demo' gutter={24} style={{width:'1200px'}}>
+        <Col span={24}>
         {
             success ? 
             (
@@ -87,20 +97,39 @@ export default function EditUp() {
             )
             :
             (
-                <>
-                    <div style={{width: '100%',height: '40px',lineHeight: '40px',display: 'flex',justifyContent: 'space-between',marginBottom: '10px'}}>
-                    
-                        {/* <Space size='large' style={{width: '100%'}}> */}
-                            <Input ref={inputRef} allowClear style={{width: '100%',marginRight: '10px'}}  status='warning'  onChange={inputTitle} placeholder='标题' maxLength={20} showWordLimit />
-                            <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags}  status='warning' />
-                            {/* <Input allowClear style={{width: '100%'}}  status='warning'  onChange={inputTitle} placeholder='介绍' maxLength={20} showWordLimit /> */}
-                            <Button type="text" icon={<IconCheck />} onClick={submitArticle} loading={completeLoading}> 发布 </Button>
-                        {/* </Space> */}
-                    </div>
-                    <div id="vditor"/>
-                </>
+                    <Form layout='vertical' form={form} size='large' onValuesChange={(v, vs) => {
+                        console.log(v, vs);
+                    }}
+                    onSubmit={(v) => {
+                        submitArticle();
+                        console.log(v);
+                    }}>
+                        <FormItem label='标题' field='title' rules={[{ required: true,message: '标题不能为空哦~' }]}>
+                            <Input ref={inputRef} allowClear style={{marginRight: '10px'}}    onChange={inputTitle} placeholder='标题' maxLength={20} showWordLimit />
+                        </FormItem>
+                        <FormItem label='描述' field='describe' rules={[{ required: true,message: '描述不能为空哦~' }]}>
+                            <Input  allowClear style={{marginRight: '10px'}} onChange={inputTitle} placeholder='简单介绍一下' maxLength={20} showWordLimit />
+                        </FormItem>
+                        <FormItem label='标签' field='tags' rules={[{ required: true,message: '标签不能为空哦~' }]}>
+                            <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags} />
+                        </FormItem>
+                        <FormItem label='内容' field='content' >
+                            <div id="vditor" style={{height: '100%'}}/>
+                        </FormItem>
+                        <FormItem wrapperCol={{ offset: 10 }}>
+                            <Space size="large">
+                                <Button type='primary' htmlType='submit' icon={<IconCheck />} loading={completeLoading}>发布</Button>
+                                <Button type='outline' icon={<IconUndo />} onClick={() => {form.resetFields();}}>重置</Button>
+                            </Space>
+                        </FormItem>
+
+                    </Form>
             )
         }
+        </Col>
+        {/* <Col span={2}></Col> */}
+        
+      </Row>
     </div>
 
   )
