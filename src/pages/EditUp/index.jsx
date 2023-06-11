@@ -4,7 +4,6 @@ import { Button,
         Input,
         Result,
         Form,
-        InputTag,
         Grid,
         Select  } from '@arco-design/web-react';
         
@@ -47,7 +46,7 @@ export default function EditUp() {
         "counter": {
             "enable": true,
             "type": "text",
-            "max": 800
+            "max": 1000
           },
         height: '600px',
         mode: 'sv'
@@ -112,17 +111,10 @@ export default function EditUp() {
                             <Input ref={inputRef} allowClear style={{marginRight: '10px'}}    onChange={inputTitle} placeholder='标题' maxLength={20} showWordLimit />
                         </FormItem>
                         <FormItem label='描述' field='describe' rules={[{ required: true,message: '描述不能为空哦~' }]}>
-                            <Input  allowClear style={{marginRight: '10px'}} onChange={inputTitle} placeholder='简单介绍一下' maxLength={20} showWordLimit />
+                            <Input  allowClear style={{marginRight: '10px'}} onChange={inputTitle} placeholder='简单介绍一下' maxLength={40} showWordLimit />
                         </FormItem>
                         <FormItem label='标签' field='tags' rules={[{ required: true,message: '标签不能为空哦~' }]}>
-                            {/* <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags} /> */}
-                            <Select
-                                mode={'multiple'}
-                                size={'large'}
-                                placeholder='选择标签'
-                                showSearch
-                                style={{ width: 345 }}
-                            >
+                            <Select mode={'multiple'} size={'large'} placeholder='选择标签' showSearch style={{ width: 345 }} >
                                 {options.map((option) => (
                                 <Option key={option} value={option}>
                                     {option}

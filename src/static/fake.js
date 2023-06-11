@@ -42,7 +42,7 @@ export const recommend_info = [
             article_info:{
                 id: '49a7v896515',
                 title: 'Redis中的BigKey问题：排查与解决思路',
-                tags: ['Redis','testTag'],
+                tags: ['Redis','testTag','中间件'],
                 time: '2023-5-6 11:23:57',
                 content: 'Redis是一款性能强劲的内存数据库，但是在使用过程中，我们可能会遇到Big Key问题，这个问题就是Redis中某个key的value过大，所以Big Key问题本质是Big Value问题，导致Redis的性能下降或者崩溃。本文将向大家介绍如何排查和解决这个问题。。'
             }

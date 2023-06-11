@@ -13,7 +13,7 @@ import { Layout,
         } from '@arco-design/web-react';
 
 import { useNavigate  } from 'react-router-dom';
-import { IconUser,IconEmail,IconPlus,IconCheck } from '@arco-design/web-react/icon';
+import { IconUser,IconEmail,IconRedo,IconCheck } from '@arco-design/web-react/icon';
 
 
 
@@ -29,12 +29,12 @@ export default function LogIn() {
   const navigate=useNavigate();
   const [form] = Form.useForm();
 
-  const checkLogin = ()=>{
+  const checkLogin = (v)=>{
+        console.log(v);
         setLoginLoding(!loginLoding);
         setTimeout(() => {
           navigate('/index/home');
-        }, 1500);
-
+        }, 1000);
   }
 
   return (
@@ -43,25 +43,25 @@ export default function LogIn() {
         <Content>
             <Space direction='vertical' style={{width: 400, margin:'auto'}}>
                 {/* <div className="login-img">
-                <img src="https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*IVdnTJqUp6gAAAAAAAAAAAAADvuFAQ/original" alt="语雀" class="theme-image index-module_logo_iT2c+" style={{height: '62px'}}/>
+                    <img src="https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*IVdnTJqUp6gAAAAAAAAAAAAADvuFAQ/original" alt="语雀" class="theme-image index-module_logo_iT2c+" style={{height: '62px'}}/>
                 </div> */}
-            <Tabs type="rounded" className='index-module__loginCard--w1Ov0' defaultActiveTab='1' style={{ width: 400, margin:'auto' }}>
+            <Tabs type="rounded" className='index-module__loginCard--w1Ov0' defaultActiveTab='1'>
                     <TabPane key='1' title={<span><IconUser style={{ marginRight: 6 }}/>账号</span>}>
-                                <Form form={form} style={{ width: 350,margin: '0 auto'}} autoComplete='off' onSubmit={checkLogin}>
-                                    <Space direction='vertical'>
-                                    <FormItem label='' rules={[{ required: true,message: '账号不能为空' }]}>
+                       <div style={{width:'99%'}}>
+                       <Form form={form}  autoComplete='off' onSubmit={(v)=>{checkLogin(v)}} style={{width: 380}}>
+                                    <FormItem label='' field='username' rules={[{ required: true,message: '账号不能为空' }]} >
                                         <Input size='large' width={200} placeholder='账号' allowClear />
                                     </FormItem>
-                                    <FormItem label='' rules={[{ required: true,message: '密码不能为空' }]}>
-                                        <Input.Password placeholder='密码' allowClear />
+                                    <FormItem label='' field='password' rules={[{ required: true,message: '密码不能为空' }]}>
+                                        <Input.Password size='large' placeholder='密码' allowClear />
                                     </FormItem>
                                     <FormItem wrapperCol={{ offset: 4 }}>
                                         <Space size={10}>
-                                        <Button type='primary' htmlType='submit' Submit={checkLogin} loading={loginLoding}  icon={<IconCheck />}>登录</Button>
-                                        <Button type='text' onClick={()=>{Message.info('注册功能暂未开放')}}>注册</Button>
+                                        <Button type='primary' htmlType='submit' loading={loginLoding}  icon={<IconCheck />}>登录</Button>
+                                        <Button type='outline' onClick={()=>{Message.info('注册功能暂未开放')}} icon={<IconRedo />}>注册</Button>
                                         </Space>
                                     </FormItem>  
-                                    <FormItem wrapperCol={{ offset: 3 }}>
+                                    <FormItem wrapperCol={{ offset: 4 }}>
                                         <Space direction='vertical'>
                                             
                                             <div style={{textAlign: 'center'}}>
@@ -74,23 +74,18 @@ export default function LogIn() {
                                             <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
                                         </Space>
                                     </FormItem>
-                                    </Space>
+                                   
                                 </Form>
-                            
-                    
-                </TabPane>
-                <TabPane key='2' title={<span><IconEmail style={{ marginRight: 6 }}/>邮箱</span>}>
-                    <Space
-                        size='large'
-                        >
-                            <Space size='large'>
-                                <Form style={{ width: 350,margin: '0 auto'}} autoComplete='off'>
-                                    <Space direction='vertical'>
-                                    <FormItem label='' rules={[{ required: true,message: '邮箱不能为空' }]}>
-                                        <Input placeholder='邮箱' allowClear  />
+                       </div>
+                    </TabPane>
+                <TabPane key='2' title={<span><IconEmail style={{ marginRight: 6 }}/>邮箱</span>}>                 
+                                <Form autoComplete='off' style={{width: 380}}>
+                                    
+                                    <FormItem label='' field='email' rules={[{ required: true,message: '邮箱不能为空' }]}>
+                                        <Input  size='large' placeholder='邮箱' allowClear  />
                                     </FormItem>
-                                    <FormItem label='' rules={[{ required: true,message: '验证码不能为空' }]}>
-                                        <Input placeholder='验证码' allowClear addAfter={<Button type='text'>发送</Button>}/>
+                                    <FormItem label='' field='emailCode' rules={[{ required: true,message: '验证码不能为空' }]}>
+                                        <Input  size='large' placeholder='验证码' allowClear suffix={<Button type='text'>发送</Button>}/>
                                     </FormItem>
                                     <FormItem >
                                         <Button type='primary' htmlType='submit' long onClick={()=>{Message.info('邮箱功能暂未开放~')}}>登录/注册</Button>
@@ -107,10 +102,9 @@ export default function LogIn() {
                                             <span>登录即代表同意本站<Link href='#'>用户协议</Link></span>
                                         </Space>
                                     </FormItem>
-                                    </Space>
+                                   
                                 </Form>
-                            </Space>
-                        </Space>
+                           
                 </TabPane>
                 </Tabs>
 
