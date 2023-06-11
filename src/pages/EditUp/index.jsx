@@ -6,7 +6,7 @@ import { Button,
         Form,
         InputTag,
         Grid,
-        Divider  } from '@arco-design/web-react';
+        Select  } from '@arco-design/web-react';
         
 import { IconCheck,IconUndo } from '@arco-design/web-react/icon';
         
@@ -31,6 +31,10 @@ export default function EditUp() {
     // Grid obj
     const Row = Grid.Row;
     const Col = Grid.Col;
+    // select obj
+    const Option = Select.Option;
+
+    const options = ['后端', '前端', 'test', 'Shenzhen', 'Chengdu', 'Wuhan'];
 
 
     const navigate=useNavigate()
@@ -111,7 +115,20 @@ export default function EditUp() {
                             <Input  allowClear style={{marginRight: '10px'}} onChange={inputTitle} placeholder='简单介绍一下' maxLength={20} showWordLimit />
                         </FormItem>
                         <FormItem label='标签' field='tags' rules={[{ required: true,message: '标签不能为空哦~' }]}>
-                            <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags} />
+                            {/* <InputTag allowClear placeholder='输入标签按回车确认'  onChange={inputTags} /> */}
+                            <Select
+                                mode={'multiple'}
+                                size={'large'}
+                                placeholder='选择标签'
+                                showSearch
+                                style={{ width: 345 }}
+                            >
+                                {options.map((option) => (
+                                <Option key={option} value={option}>
+                                    {option}
+                                </Option>
+                                ))}
+                            </Select>
                         </FormItem>
                         <FormItem label='内容' field='content' >
                             <div id="vditor" style={{height: '100%'}}/>
