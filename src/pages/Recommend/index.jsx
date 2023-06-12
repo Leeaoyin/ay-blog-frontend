@@ -15,7 +15,7 @@ import { Input,
         Typography ,
         Carousel ,
         List,
-        Rate,
+        Pagination ,
         Tag,
         Select
     } from '@arco-design/web-react'
@@ -59,6 +59,10 @@ export default function Recommend() {
 
   const doSearch = (e)=>{
     Message.success(`向后台搜索${e}`);
+  }
+
+  const nextPage = (num, size) => {
+      console.log(num,size);
   }
 
   return (
@@ -115,11 +119,24 @@ export default function Recommend() {
                 </Col>
                 <Col span={12}>
                     <Space direction='vertical' style={{width: '100%'}}>
-                        
-                        {
-                            articleList.length!= 0 ? 
+
+                            {
+                            articleList.length!== 0 ? 
                             (
                                 <>
+                                <Card style={{width: '600px',marginBottom:10,borderRadius: '0px'}} >
+                                <div>
+                                <Input.Group compact>
+                                    {/* <Select defaultValue='标题' style={{ width: '20%' }}>
+                                    <Select.Option value='标签'>标签</Select.Option>
+                                    <Select.Option value='标题'>标题</Select.Option>
+                                    </Select> */}
+                                    <InputSearch placeholder='请输入搜索内容' allowClear={true} style={{ width: '100%',marginBottom: '10px' }}  searchButton={true} onSearch={doSearch}/>
+                                </Input.Group>
+                                {/* <InputSearch allowClear={true} placeholder='请输入搜索内容' style={{ marginBottom: '10px' }} searchButton={true} onSearch={doSearch} /> */}
+                                </div>
+                            </Card>
+                                {/* <Card  style={{width: '600px',minHeight: '800px',marginBottom:10,borderRadius: '0px'}}> */}
                                 {
                                     articleList.map((recommends)=>{
                                         return (
@@ -138,12 +155,8 @@ export default function Recommend() {
                                         )
                                     })
                                 }
-                            
-                            <Card style={{ width: '600px' }} hoverable onClick={()=>Message.success('hi~hi~')}>
-                                <Space style={{margin: '0px auto'}}>
-                                    <Link>查看更多。。。</Link>
-                                </Space>
-                            </Card>
+                                {/* </Card> */}
+                                <Pagination simple total={50} size='small' onChange={nextPage} style={{paddingLeft: '210px'}}/>
                             </>
                             )
 
@@ -164,16 +177,7 @@ export default function Recommend() {
                     <Affix offsetTop={20}>
                     <Space direction='vertical' >
                     {/* style={{ width: '280px'}} */}
-                        <div style={{ width: '280px'}}>
-                        <Input.Group compact>
-                            <Select defaultValue='标题' style={{ width: '25%' }}>
-                            <Select.Option value='标签'>标签</Select.Option>
-                            <Select.Option value='标题'>标题</Select.Option>
-                            </Select>
-                            <InputSearch placeholder='请输入搜索内容' allowClear={true} style={{ width: '75%',marginBottom: '10px' }}  searchButton={true} onSearch={doSearch}/>
-                        </Input.Group>
-                        {/* <InputSearch allowClear={true} placeholder='请输入搜索内容' style={{ marginBottom: '10px' }} searchButton={true} onSearch={doSearch} /> */}
-                        </div>
+                        
                     
 
                             <Card
@@ -210,13 +214,13 @@ export default function Recommend() {
                             style={{ width: '280px' }}
                             cover={
                                 <div style={{ width: '280px',margin: '10px 20px '}} className='recommend-classes'>
-                                    <Space size={'medium'} wrap>
+                                    {/* <Space size={'medium'} wrap>
                                     {COLORS.map((color, i) => (
                                         <Tag key={i} color={color} style={{margin: 'auto'}}>
                                         ada{i}
                                         </Tag>
                                     ))}
-                                    </Space>
+                                    </Space> */}
                                 </div>
                             }
                             >

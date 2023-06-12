@@ -83,7 +83,7 @@ export default function EditUp() {
 
   return (
     <div>
-        <Card>
+        <Card style={{borderRadius: '0px'}}>
             <Row className='grid-gutter-demo' gutter={24} style={{width:'1200px'}}>
                 <Col span={24}>
                 {
