@@ -16,7 +16,7 @@ import { useNavigate  } from 'react-router-dom';
 import { IconUser,IconEmail,IconRedo,IconCheck } from '@arco-design/web-react/icon';
 
 
-
+import {Login} from '../../service/UserService.js';
 import './style.css';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
@@ -29,8 +29,8 @@ export default function LogIn() {
   const navigate=useNavigate();
   const [form] = Form.useForm();
 
-  const checkLogin = (v)=>{
-        console.log(v);
+  const checkLogin = (value)=>{
+        Login(value);
         setLoginLoding(!loginLoding);
         setTimeout(() => {
           navigate('/index/home');

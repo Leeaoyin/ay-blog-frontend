@@ -1,7 +1,7 @@
 import axios from 'axios';
-import store from './store';
+// import store from './store';
 
-export default class request {
+class request {
     constructor(baseURL) {
       this.instance = axios.create({
         baseURL,
@@ -11,7 +11,7 @@ export default class request {
       this.instance.interceptors.request.use(
         (config) => {
           // 在发送请求前做些什么
-          const token = store.get('token');
+          const token = localStorage.getItem('token');
           if (token) {
             config.headers.Authorization = `Bearer ${token}`;
           }
@@ -60,4 +60,6 @@ export default class request {
       return response;
     }
   }
+
+  export default request = new request('https://letgee.com.cn/v1')
   
