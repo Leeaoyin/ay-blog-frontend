@@ -61,5 +61,5 @@ class request {
     }
   }
 
-  export default request = new request('https://letgee.com.cn/v1')
+  export default request = new request('http://leeay.cn/v1')
   
