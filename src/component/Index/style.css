@@ -30,6 +30,8 @@
 
 
 
+
+
 .layout-basic-demo .arco-layout-footer {
   height:40px;
   line-height: 40px;
@@ -58,19 +60,22 @@
   }
 
 
-  .arco-menu-dark {
-    background-color: #07828B !important;
-}
+
 .arco-menu-item {
-    background-color: #07828B !important;
-    /* color: #3b3e43 !important; */
+    background-color: white !important;
+    color: #3b3e43 !important;
     font-weight: bold !important;
 
 }
 .arco-menu-item.arco-menu-disabled {
-    background-color: #07828B !important;
+    background-color: white !important;
 }
 .arco-menu-item.arco-menu-selected {
-    background-color: #03616C !important;
+    background-color: #1f94a1 !important;
+    color: white !important;
 
+}
+
+.arco-menu-dark {
+    background-color: white !important;
 }

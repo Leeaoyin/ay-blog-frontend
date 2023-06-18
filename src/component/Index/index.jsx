@@ -92,11 +92,10 @@ export default function Index() {
           
           <div className='head-root'>
           <Header id='index-header' style={{width: '100%'}} id="head-up">
-            
             <div className='menu-demo'>
-              <Menu mode='horizontal'  defaultSelectedKeys={['/index/home']} selectedKeys={location.pathname} width={50} theme='dark' style={{borderRadius: '10px'}}>
+              <Menu mode='horizontal'  defaultSelectedKeys={['/index/home']} selectedKeys={location.pathname}  theme='dark' style={{borderRadius: '10px'}}>
                 
-              <MenuItem
+              {/* <MenuItem
                   key='0'
                   style={{ padding: 0, marginRight: 38, }}
                   disabled
@@ -107,24 +106,23 @@ export default function Index() {
                       width: 80,
                       height: 30,
                       borderRadius: 10,
-                      // background: 'rgb(var(--arcoblue-1))',
                       cursor: 'text',
                     }}
                   >
-                    {/* iconfront */}
                     <IconFont type='icon-fenlei' style={{ fontSize: 35 }} />
                   </div>
-                </MenuItem>
-                <Space size={40}>
+                </MenuItem> */}
+                <Space size={60}>
                 
                     <NavLink to={'home'}><MenuItem key='/index/home'>主页 </MenuItem></NavLink>
                     <NavLink to={'recommend'}><MenuItem key='/index/recommend'>推荐 </MenuItem></NavLink>
                     <NavLink to={'share'}><MenuItem key='/index/share'>分享 </MenuItem></NavLink>
                     <NavLink to={'edit'}><MenuItem key='/index/edit'>发布 </MenuItem></NavLink>
+                    
                 </Space>
               </Menu>
             </div>
-                <ContentCard/>
+            <ContentCard/>
           </Header>
           </div>
 
