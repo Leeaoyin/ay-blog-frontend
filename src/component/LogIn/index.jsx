@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 
 import { Layout,
-         Card, 
          Link, 
          Space, 
          Tabs,
@@ -10,6 +9,7 @@ import { Layout,
          Input,
          Button,
          Icon
+         
         } from '@arco-design/web-react';
 
 import { useNavigate  } from 'react-router-dom';
@@ -17,11 +17,12 @@ import { IconUser,IconEmail,IconRedo,IconCheck } from '@arco-design/web-react/ic
 
 
 import {Login} from '../../service/UserService.js';
+import {saveUserName} from '../../utils/Storeutil.js'
 import './style.css';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 const Content = Layout.Content;
-const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_tu7ydspe7w8.js'});
+const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_rr20xeuigof.js'});
 
 
 export default function LogIn() {
@@ -30,11 +31,24 @@ export default function LogIn() {
   const [form] = Form.useForm();
 
   const checkLogin = (value)=>{
-        Login(value);
-        setLoginLoding(!loginLoding);
-        setTimeout(() => {
-          navigate('/index/home');
-        }, 1000);
+        Login(value).then(response=>{
+            if(response.code === 200){
+                console.log('====================================');
+                console.log(response.data.token);
+                console.log('====================================');
+                saveUserName(response.data.account);
+                setLoginLoding(!loginLoding);
+                setTimeout(() => {
+                    navigate('/index/home');
+                }, 1000);
+            }else{
+                Message.error(response.message);
+            }
+            
+        }).catch(error=>{
+
+        });
+        
   }
 
   return (
@@ -49,7 +63,7 @@ export default function LogIn() {
                     <TabPane key='1' title={<span><IconUser style={{ marginRight: 6 }}/>账号</span>}>
                        <div style={{width:'99%'}}>
                        <Form form={form}  autoComplete='off' onSubmit={(v)=>{checkLogin(v)}} style={{width: 380}}>
-                                    <FormItem label='' field='username' rules={[{ required: true,message: '账号不能为空' }]} >
+                                    <FormItem label='' field='account' rules={[{ required: true,message: '账号不能为空' }]} >
                                         <Input size='large' width={200} placeholder='账号' allowClear />
                                     </FormItem>
                                     <FormItem label='' field='password' rules={[{ required: true,message: '密码不能为空' }]}>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate, Outlet, useLocation  } from 'react-router-dom';
 
 import { Layout, Menu, Avatar,  Space, Icon, Button,Popover, Typography,Badge,BackTop } from '@arco-design/web-react';
@@ -6,24 +6,32 @@ import { IconArrowRight,IconUser} from '@arco-design/web-react/icon';
 
 import './style.css'
 import Foot from './Foot';
+import { getUserName,removeUserName } from '../../utils/Storeutil';
 
 
 const Header = Layout.Header;
 const Footer = Layout.Footer;
 const Content = Layout.Content;
 const MenuItem = Menu.Item;
-const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_tu7ydspe7w8.js'});
+const IconFont = Icon.addFromIconFontCn({src: '//at.alicdn.com/t/c/font_4105517_rr20xeuigof.js'});
 
 
 export default function Index() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [islogin, setIsLogin] = useState(false);
+  const [username, setUserName] = useState('');
+  useEffect(()=>{
+    setUserName(getUserName());
+  },[]);
 
 
   const loginOn = ()=>{
-    setIsLogin(!islogin);
     navigate('/login');
+  }
+
+  const logOut = ()=>{
+    setUserName('');
+    removeUserName();
   }
 
 
@@ -43,7 +51,7 @@ export default function Index() {
           
         
           {
-            islogin ? (
+            username ? (
               <Space>
                 <Avatar style={{backgroundColor: '#165DFF'}} size={28}>
                   <img alt='avatar' src={require('../../static/my-avatar.jpg')}/>
@@ -51,12 +59,12 @@ export default function Index() {
                  
                  <div style={{width: '70px',height: '20px'}}>
                  <Typography.Paragraph heading={1} ellipsis={{ wrapper: 'span' }}>
-                      L.AY
+                      {username}
                   </Typography.Paragraph>
                  </div>
                  
                  <Popover position='right' title='' content={<span>退出</span>}>
-                    <Button onClick={()=>setIsLogin(!islogin)}><IconArrowRight/></Button>
+                    <Button onClick={logOut}><IconArrowRight/></Button>
                  </Popover>
               </Space>
             ):
@@ -91,11 +99,11 @@ export default function Index() {
       <Layout style={{ minHeight: '400px' }}>
           
           <div className='head-root'>
-          <Header id='index-header' style={{width: '100%'}} id="head-up">
+          <Header id='index-header' style={{width: '100%'}}>
             <div className='menu-demo'>
               <Menu mode='horizontal'  defaultSelectedKeys={['/index/home']} selectedKeys={location.pathname}  theme='dark' style={{borderRadius: '10px'}}>
                 
-              {/* <MenuItem
+              <MenuItem
                   key='0'
                   style={{ padding: 0, marginRight: 38, }}
                   disabled
@@ -111,7 +119,7 @@ export default function Index() {
                   >
                     <IconFont type='icon-fenlei' style={{ fontSize: 35 }} />
                   </div>
-                </MenuItem> */}
+                </MenuItem>
                 <Space size={60}>
                 
                     <NavLink to={'home'}><MenuItem key='/index/home'>主页 </MenuItem></NavLink>

@@ -37,20 +37,6 @@ const imageSrc = [
     '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/24e0dd27418d2291b65db1b21aa62254.png~tplv-uwbnlip3yd-webp.webp',
   ];
 
-  const COLORS = [
-
-    'green',
-    'orange',
-    'gold',
-    'lime',
-    'cyan',
-    'blue',
-    'arcoblue',
-    'purple',
-    'pinkpurple',
-    'magenta',
-    'gray',
-  ];
 
 
 export default function Recommend() {
@@ -67,7 +53,7 @@ export default function Recommend() {
 
   return (
         <div style={{ }} className="recommend-content">
-            <Divider style={{borderBottomStyle: 'dashed'}} orientation='center'><IconDoubleDown /></Divider>
+            {/* <Divider style={{borderBottomStyle: 'dashed'}} orientation='center'><IconDoubleDown /></Divider> */}
             
             <Row  className='grid-demo' gutter={24} >
                 <Col span={6}>

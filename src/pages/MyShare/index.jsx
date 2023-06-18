@@ -23,7 +23,7 @@ export default function MyShare() {
         }
       /> */}
 
-    <Divider style={{borderBottomStyle: 'dashed'}} orientation='center'><IconDoubleDown /></Divider>
+    {/* <Divider style={{borderBottomStyle: 'dashed'}} orientation='center'><IconDoubleDown /></Divider> */}
     <Row className='grid-gutter-demo' gutter={24} style={{width:'1200px'}}>
             {/* <Col span={3}></Col> */}
             <Col span={24} style={{}}>

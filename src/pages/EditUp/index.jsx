@@ -6,11 +6,13 @@ import { Button,
         Form,
         Grid,
         Select,
-        Card  } from '@arco-design/web-react';
+        Card,
+        Modal  } from '@arco-design/web-react';
         
 import { IconCheck,IconUndo } from '@arco-design/web-react/icon';
         
-import { useNavigate  } from 'react-router-dom';
+import { Navigate, useNavigate  } from 'react-router-dom';
+import { getUserName } from '../../utils/Storeutil';
         
 import Vditor from 'vditor';
 import 'vditor/dist/index.css';
@@ -20,8 +22,7 @@ export default function EditUp() {
 
     const [vd, setVd] = React.useState(); // markdown edit
     const [success, setSuccess] = React.useState(false);
-    const [title, setTitle] = React.useState('');
-    const [tags, setTags] = React.useState([]);
+    const [visible, setVisible] = React.useState(false);
     const [completeLoading, setCompleteLoading] = React.useState(false);
     const [articleInfo, setArticleInfo] = React.useState({});  //object for submit article api
     const inputRef = React.useRef();
@@ -56,14 +57,26 @@ export default function EditUp() {
       inputRef.current.focus();
     }, []);
 
+    React.useEffect(()=>{
+        if(!getUserName()){
+            setVisible(!visible)
+            
+        }
+    },[]);
 
     const submitArticle = (e)=>{
-        let content = vd.getHTML();
+        if(!getUserName()){
+            setVisible(!visible)
+            
+        }else{
+            let content = vd.getHTML();
         setArticleInfo({...articleInfo,content});
         setCompleteLoading(!completeLoading);
         setTimeout(()=>{
             setSuccess(!success);
-            },1000);   
+            },1000);  
+        }
+         
     }
 
 
@@ -71,18 +84,21 @@ export default function EditUp() {
         setArticleInfo({...articleInfo,title});
     }
 
-    const inputTags = (tags,reason)=>{
-        setArticleInfo({...articleInfo,tags});
-    }
 
-    const clearAllInput = ()=>{
-        setTitle('');
-        setTags([]);
-    }
 
 
   return (
     <div>
+        <Modal
+        title='提示'
+        visible={visible}
+        onOk={() => navigate('/login')}
+        onCancel={() => navigate(-1)}
+      >
+        <p>
+          未登录~
+        </p>
+      </Modal>
         <Card style={{borderRadius: '0px'}}>
             <Row className='grid-gutter-demo' gutter={24} style={{width:'1200px'}}>
                 <Col span={24}>
