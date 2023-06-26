@@ -5,6 +5,8 @@ import Recommend from "../pages/Recommend";
 import LogIn from "../component/LogIn";
 import Index from "../component/Index";
 import EditUp from "../pages/EditUp";
+import ThreeD from "../pages/ThreeD";
+
 
 
 
@@ -17,6 +19,10 @@ export const routers = [
         path: '/login',
         element: <LogIn/>
     },
+    {
+        path: 'threeD',
+        element: <ThreeD/>
+    },      
     {
         path: '/index',
         element: <Index/>,

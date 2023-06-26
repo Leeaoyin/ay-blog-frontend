@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Space, Card, Avatar, Typography, Modal, Form, Input, Message,Grid,Divider } from '@arco-design/web-react';
+import { Space, Card, Avatar, Typography, Modal, Form, Input, Message,Grid,Divider, Button } from '@arco-design/web-react';
 import { IconArrowRight,IconPlus,IconAt,IconDoubleDown } from '@arco-design/web-react/icon';
 import { site_info } from '../../static/fake';
 import './style.css'
@@ -48,6 +48,10 @@ export default function Home() {
 
   const openUrl = (url)=>{
     window.open(url, "_blank");
+  }
+
+  const goThreeD = ()=>{
+    window.open('/threeD', "_blank");
   }
     
   return (
@@ -196,7 +200,7 @@ export default function Home() {
             <Card hoverable style={{ width: '100%' }}
                       cover={
                         <div className='sider-right' style={{ height: 200, overflow: 'hidden' }}>
-                        
+                        <Button type='primary' onClick={goThreeD} style={{marginTop: '10px',marginLeft: '20px'}}>查看three模型</Button>
                         </div>
                             }
                 >
