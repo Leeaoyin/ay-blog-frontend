@@ -64,7 +64,7 @@ export default function ThreeD() {
         //加载外部文件
         const loadGLTF = ()=>{
           const loader = new GLTFLoader().setPath("");
-          loader.load( require('../../static/727.gltf'), function ( gltf ) {
+          loader.load( require('../../static/yw_model.glb'), function ( gltf ) {
             scene.add( gltf.scene );
             renderer.render(scene, camera);
           }, undefined, function ( error ) {
